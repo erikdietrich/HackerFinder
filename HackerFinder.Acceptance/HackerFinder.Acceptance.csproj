@@ -60,7 +60,6 @@
       <DependentUpon>LocationSearch.feature</DependentUpon>
     </Compile>
     <Compile Include="LocationSearchSteps.cs" />
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +69,12 @@
       <LastGenOutput>LocationSearch.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HackerFinder\HackerFinder.csproj">
+      <Project>{25dccd64-4fcb-4a3a-a212-d53a83d77167}</Project>
+      <Name>HackerFinder</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
