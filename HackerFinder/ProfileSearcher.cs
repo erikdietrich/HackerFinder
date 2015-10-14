@@ -7,20 +7,23 @@ namespace HackerFinder
 {
     public class ProfileSearcher
     {
-        public IEnumerable<Profile> GetProfilesForLocation(string locationText)
+        private readonly IGithubInquistor _inquisitor;
+        public ProfileSearcher(IGithubInquistor inquisitor)
         {
-            var client = new HttpClient();
-            client.DefaultRequestHeaders.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2;)");
-            var task = client.GetAsync(string.Format("https://api.github.com/search/users?q=+location:{0}", locationText));
-            var result = task.Result;
+            if (inquisitor == null)
+                throw new ArgumentNullException(nameof(inquisitor));
+            _inquisitor = inquisitor;
+        }
 
-            var contentToString = result.Content.ReadAsStringAsync().Result;
+        public IList<Profile> GetProfilesForLocation(string locationText)
+        {
+            var contentToString = _inquisitor.ExecuteUrlQuery(locationText);
             if (contentToString.Contains("erikdietrich"))
             {
                 var profile = new Profile() { FirstName = "Erik" };
-                return Enumerable.Repeat(profile, 1);
+                return Enumerable.Repeat(profile, 1).ToList();
             }
-            return Enumerable.Empty<Profile>();
+            return Enumerable.Empty<Profile>().ToList();
         }
 
     }

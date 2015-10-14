@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GithubInquistor.cs" />
+    <Compile Include="IGithubInquistor.cs" />
     <Compile Include="Profile.cs" />
     <Compile Include="ProfileSearcher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
