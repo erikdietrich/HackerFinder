@@ -10,14 +10,14 @@ namespace HackerFinder.Test.ProfileSearcherTests
     [TestClass]
     public class GetProfilesForLocation_Should
     {
-        private IGithubInquistor Inquisitor { get; set; }
+        private IGithubInquisitor Inquisitor { get; set; }
 
         private ProfileSearcher Target { get; set; }
 
         [TestInitialize]
         public void BeforeEachTest()
         {
-            Inquisitor = Mock.Create<IGithubInquistor>();
+            Inquisitor = Mock.Create<IGithubInquisitor>();
             Target = new ProfileSearcher(Inquisitor);
         }
 

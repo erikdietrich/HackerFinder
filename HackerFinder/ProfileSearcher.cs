@@ -7,8 +7,8 @@ namespace HackerFinder
 {
     public class ProfileSearcher
     {
-        private readonly IGithubInquistor _inquisitor;
-        public ProfileSearcher(IGithubInquistor inquisitor)
+        private readonly IGithubInquisitor _inquisitor;
+        public ProfileSearcher(IGithubInquisitor inquisitor)
         {
             if (inquisitor == null)
                 throw new ArgumentNullException(nameof(inquisitor));

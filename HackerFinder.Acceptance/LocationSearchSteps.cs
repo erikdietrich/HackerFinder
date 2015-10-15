@@ -16,7 +16,7 @@ namespace HackerFinder.Acceptance
         [When(@"I supply location (.*)")]
         public void WhenISupplyLocationWheelingIL(string locationText)
         {
-            var mockInquisitor = Mock.Create<IGithubInquistor>();
+            var mockInquisitor = Mock.Create<IGithubInquisitor>();
             mockInquisitor.Arrange(inquisitor => inquisitor.ExecuteUrlQuery(Arg.AnyString)).Returns("erikdietrich");
 
             var target = new ProfileSearcher(mockInquisitor);

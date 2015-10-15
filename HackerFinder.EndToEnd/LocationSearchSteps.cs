@@ -11,7 +11,7 @@ namespace HackerFinder.EndToEnd
         [When(@"I supply location (.*)")]
         public void WhenISupplyLocation(string locationText)
         {
-            var searcher = new ProfileSearcher(new GithubInquistor());
+            var searcher = new ProfileSearcher(new GithubInquisitor());
             var profiles = searcher.GetProfilesForLocation(locationText);
 
             ScenarioContext.Current.Set(profiles);

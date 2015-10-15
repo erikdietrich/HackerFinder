@@ -5,7 +5,7 @@ using System.Net.Http;
 
 namespace HackerFinder
 {
-    public interface IGithubInquistor
+    public interface IGithubInquisitor
     {
         string ExecuteUrlQuery(string queryString);
 
