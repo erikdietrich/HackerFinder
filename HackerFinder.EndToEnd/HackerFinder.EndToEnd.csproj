@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E34FDCC9-641D-457B-87FF-862D47FC7F55}</ProjectGuid>
+    <ProjectGuid>{0CB125EE-6BB0-4B22-A530-5F04B19C9A9C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HackerFinder.Acceptance</RootNamespace>
-    <AssemblyName>HackerFinder.Acceptance</AssemblyName>
+    <RootNamespace>HackerFinder.EndToEnd</RootNamespace>
+    <AssemblyName>HackerFinder.EndToEnd</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -40,10 +40,6 @@
       <HintPath>..\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Telerik.JustMock, Version=2015.3.929.5, Culture=neutral, PublicKeyToken=721b6c5bc0326b3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\JustMock.2015.3.929.5\lib\Net35\Telerik.JustMock.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -59,9 +55,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="LocationSearch.feature.cs">
+      <DependentUpon>LocationSearch.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LocationSearch.feature</DependentUpon>
     </Compile>
     <Compile Include="LocationSearchSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
