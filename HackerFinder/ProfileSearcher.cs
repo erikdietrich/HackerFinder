@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HackerFinder.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -17,12 +18,27 @@ namespace HackerFinder
 
         public IList<Profile> GetProfilesForLocation(string locationText)
         {
-            var contentToString = _inquisitor.ExecuteUrlQuery(locationText);
-            if (contentToString.Contains("erikdietrich"))
+            if(locationText == null)
+                throw new ArgumentNullException(nameof(locationText));
+
+            try
             {
-                var profile = new Profile() { FirstName = "Erik" };
-                return Enumerable.Repeat(profile, 1).ToList();
+                var contentToString = _inquisitor.ExecuteUrlQuery(locationText);
+                if (contentToString.Contains("erikdietrich"))
+                {
+                    var profile = new Profile()
+                    {
+                        FirstName = "Erik"
+                    };
+                    return Enumerable.Repeat(profile, 1).ToList();
+                }
             }
+            catch(Exception ex)
+            {
+                throw new GithubQueryingException("A problem occurred searching Github.", ex);
+            }
+
+            
             return Enumerable.Empty<Profile>().ToList();
         }
 

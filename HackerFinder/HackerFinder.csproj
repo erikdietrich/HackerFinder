@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\GithubQueryingException.cs" />
     <Compile Include="GithubInquistor.cs" />
     <Compile Include="IGithubInquistor.cs" />
     <Compile Include="Profile.cs" />
