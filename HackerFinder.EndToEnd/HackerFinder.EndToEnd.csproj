@@ -77,6 +77,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="JustErik.txt" />
     <Content Include="WheelingJSON.txt" />
   </ItemGroup>
   <Choose>

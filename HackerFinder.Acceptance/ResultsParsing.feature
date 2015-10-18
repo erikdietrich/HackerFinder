@@ -1,0 +1,6 @@
+﻿Feature: ResultsParsing
+	
+
+Scenario: Parse a single result
+	When I parse the json query string {\"total_count\":1,\"incomplete_results\":false,\"items\":[{\"login\":\"erikdietrich\",\"id\":1232840,\"avatar_url\":\"https://avatars.githubusercontent.com/u/1232840?v=3\",\"gravatar_id\":\"\",\"url\":\"https://api.github.com/users/erikdietrich\",\"html_url\":\"https://github.com/erikdietrich\",\"followers_url\":\"https://api.github.com/users/erikdietrich/followers\",\"following_url\":\"https://api.github.com/users/erikdietrich/following{/other_user}\",\"gists_url\":\"https://api.github.com/users/erikdietrich/gists{/gist_id}\",\"starred_url\":\"https://api.github.com/users/erikdietrich/starred{/owner}{/repo}\",\"subscriptions_url\":\"https://api.github.com/users/erikdietrich/subscriptions\",\"organizations_url\":\"https://api.github.com/users/erikdietrich/orgs\",\"repos_url\":\"https://api.github.com/users/erikdietrich/repos\",\"events_url\":\"https://api.github.com/users/erikdietrich/events{/privacy}\",\"received_events_url\":\"https://api.github.com/users/erikdietrich/received_events\",\"type\":\"User\",\"site_admin\":false,\"score\":1.0}]}
+	Then the result should contain a single profile

@@ -8,6 +8,9 @@ namespace HackerFinder
     public class ProfileSearcher
     {
         private readonly IGithubInquisitor _inquisitor;
+
+        private readonly ResultsParser _parser = new ResultsParser();
+
         public ProfileSearcher(IGithubInquisitor inquisitor)
         {
             if (inquisitor == null)
@@ -35,20 +38,10 @@ namespace HackerFinder
             var contentToString = _inquisitor.ExecuteUrlQuery(locationText);
             if (contentToString.Contains("erikdietrich"))
             {
-                var profile = BuildProfile();
-                return Enumerable.Repeat(profile, 1).ToList();
+                var profiles = _parser.ConvertToProfiles(contentToString);
+                return profiles.ToList();
             }
             return Enumerable.Empty<Profile>().ToList();
-        }
-
-        private static Profile BuildProfile()
-        {
-            var profile = new Profile()
-            {
-                FirstName = "Erik",
-                LastName = "Dietrich"
-            };
-            return profile;
         }
     }
 }

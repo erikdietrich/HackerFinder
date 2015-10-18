@@ -65,6 +65,12 @@
     </Compile>
     <Compile Include="LocationSearchSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultsParsing.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResultsParsing.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ResultsParsingSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -73,6 +79,10 @@
       <LastGenOutput>LocationSearch.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <None Include="ResultsParsing.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ResultsParsing.feature.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HackerFinder\HackerFinder.csproj">
