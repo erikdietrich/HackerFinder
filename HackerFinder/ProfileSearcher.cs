@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
 
 namespace HackerFinder
 {
@@ -23,24 +22,33 @@ namespace HackerFinder
 
             try
             {
-                var contentToString = _inquisitor.ExecuteUrlQuery(locationText);
-                if (contentToString.Contains("erikdietrich"))
-                {
-                    var profile = new Profile()
-                    {
-                        FirstName = "Erik"
-                    };
-                    return Enumerable.Repeat(profile, 1).ToList();
-                }
+                return FindAllProfilesForLocation(locationText);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new GithubQueryingException("A problem occurred searching Github.", ex);
-            }
+            }            
+        }
 
-            
+        private IList<Profile> FindAllProfilesForLocation(string locationText)
+        {
+            var contentToString = _inquisitor.ExecuteUrlQuery(locationText);
+            if (contentToString.Contains("erikdietrich"))
+            {
+                var profile = BuildProfile();
+                return Enumerable.Repeat(profile, 1).ToList();
+            }
             return Enumerable.Empty<Profile>().ToList();
         }
 
+        private static Profile BuildProfile()
+        {
+            var profile = new Profile()
+            {
+                FirstName = "Erik",
+                LastName = "Dietrich"
+            };
+            return profile;
+        }
     }
 }

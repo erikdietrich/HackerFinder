@@ -6,6 +6,7 @@ namespace HackerFinder
 {
     public class Profile
     {
+        public string LastName { get; set; }
         public string FirstName { get; set; }
     }
 }

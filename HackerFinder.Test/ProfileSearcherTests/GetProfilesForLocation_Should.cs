@@ -31,13 +31,26 @@ namespace HackerFinder.Test.ProfileSearcherTests
         }
 
         [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
-        public void Return_A_Profile_With_FirstName_Erik_When_GithubInquisitor_Returns_Result_With_String_erikdietrich()
+        public void Return_A_Profile_With_FirstName_Erik_When_GithubInquisitor_Returns_Result_With_Username_erikdietrich()
         {
-            Inquisitor.Arrange(i => i.ExecuteUrlQuery(Arg.AnyString)).Returns("erikdietrich");
+            const string userName = "erikdietrich";
+
+            Inquisitor.Arrange(i => i.ExecuteUrlQuery(Arg.AnyString)).Returns(userName);
 
             var firstProfile = Target.GetProfilesForLocation("Wheeling,IL").First();
 
             Assert.AreEqual<string>("Erik", firstProfile.FirstName);
+        }
+
+        [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
+        public void Return_A_Profile_With_LastName_Dietrich_When_GithubInquisitor_Returns_Result_With_Username_erikdietrich()
+        {
+            const string userName = "erikdietrich";
+            Inquisitor.Arrange(i => i.ExecuteUrlQuery(Arg.AnyString)).Returns(userName);
+
+            var firstProfile = Target.GetProfilesForLocation("doesntmatter").First();
+
+            Assert.AreEqual<string>("Dietrich", firstProfile.LastName);
         }
 
         [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
