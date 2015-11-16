@@ -24,5 +24,13 @@ namespace HackerFinder.EndToEnd
 
             Assert.IsTrue(profiles.Any(pr => pr.FirstName == userFirstName));
         }
+
+        [Then(@"I should have a user with email address (.*)")]
+        public void ThenIShouldHaveAUserWithEmailAddressErikDaedtech_Com(string emailAddress)
+        {
+            var profiles = ScenarioContext.Current.Get<IList<Profile>>();
+
+            Assert.IsTrue(profiles.Any(p => p.EmailAddress == emailAddress));
+        }
     }
 }

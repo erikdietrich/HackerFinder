@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="JustErik.txt" />
+    <Content Include="ProfileJSON.txt" />
     <Content Include="WheelingJSON.txt" />
   </ItemGroup>
   <Choose>
