@@ -10,8 +10,6 @@ namespace HackerFinder
     {
         private readonly IGithubInquisitor _inquisitor;
 
-        private readonly ResultsParser _parser = new ResultsParser();
-
         public ProfileSearcher(IGithubInquisitor inquisitor)
         {
             if (inquisitor == null)

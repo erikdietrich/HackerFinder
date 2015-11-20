@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace HackerFinder.Acceptance
+namespace HackerFinder.EndToEnd
 {
     using TechTalk.SpecFlow;
     
@@ -19,19 +19,19 @@ namespace HackerFinder.Acceptance
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class ResultsParsingFeature
+    public partial class LocationSearchFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "ResultsParsing.feature"
+#line 1 "LocationSearch.feature"
 #line hidden
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ResultsParsing", "", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "LocationSearch", "", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -46,9 +46,9 @@ namespace HackerFinder.Acceptance
         public virtual void TestInitialize()
         {
             if (((TechTalk.SpecFlow.FeatureContext.Current != null) 
-                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "ResultsParsing")))
+                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "LocationSearch")))
             {
-                HackerFinder.Acceptance.ResultsParsingFeature.FeatureSetup(null);
+                HackerFinder.EndToEnd.LocationSearchFeature.FeatureSetup(null);
             }
         }
         
@@ -69,17 +69,33 @@ namespace HackerFinder.Acceptance
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Parse a single result")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "ResultsParsing")]
-        public virtual void ParseASingleResult()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Chicago Search, first name")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "LocationSearch")]
+        public virtual void ChicagoSearchFirstName()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Parse a single result", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Chicago Search, first name", ((string[])(null)));
 #line 4
 this.ScenarioSetup(scenarioInfo);
 #line 5
- testRunner.When(@"I parse the json query string {\""total_count\"":1,\""incomplete_results\"":false,\""items\"":[{\""login\"":\""erikdietrich\"",\""id\"":1232840,\""avatar_url\"":\""https://avatars.githubusercontent.com/u/1232840?v=3\"",\""gravatar_id\"":\""\"",\""url\"":\""https://api.github.com/users/erikdietrich\"",\""html_url\"":\""https://github.com/erikdietrich\"",\""followers_url\"":\""https://api.github.com/users/erikdietrich/followers\"",\""following_url\"":\""https://api.github.com/users/erikdietrich/following{/other_user}\"",\""gists_url\"":\""https://api.github.com/users/erikdietrich/gists{/gist_id}\"",\""starred_url\"":\""https://api.github.com/users/erikdietrich/starred{/owner}{/repo}\"",\""subscriptions_url\"":\""https://api.github.com/users/erikdietrich/subscriptions\"",\""organizations_url\"":\""https://api.github.com/users/erikdietrich/orgs\"",\""repos_url\"":\""https://api.github.com/users/erikdietrich/repos\"",\""events_url\"":\""https://api.github.com/users/erikdietrich/events{/privacy}\"",\""received_events_url\"":\""https://api.github.com/users/erikdietrich/received_events\"",\""type\"":\""User\"",\""site_admin\"":false,\""score\"":1.0}]}", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I supply location Wheeling,IL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 6
- testRunner.Then("the result should contain a single profile", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I should have a user named Erik", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Chicago Search, email address")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "LocationSearch")]
+        public virtual void ChicagoSearchEmailAddress()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Chicago Search, email address", ((string[])(null)));
+#line 8
+this.ScenarioSetup(scenarioInfo);
+#line 9
+ testRunner.When("I supply location Wheeling,IL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 10
+ testRunner.Then("I should have a user with email address erik@daedtech.com", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
