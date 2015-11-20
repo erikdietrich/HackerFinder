@@ -40,13 +40,20 @@ namespace HackerFinder
 
             var profileRawResult = _inquisitor.ExecuteVerbatimSearch(profileUrl);
             var profileJson = JObject.Parse(profileRawResult);
+            var profile = MakeProfileFromJson(profileJson);
+
+            return new List<Profile>() { profile };
+        }
+        private static Profile MakeProfileFromJson(JObject profileJson)
+        {
+            var nameTokens = ((string)profileJson["name"]).Split(' ');
             var profile = new Profile()
             {
-                FirstName = "Erik",
-                LastName = "Dietrich",
+                FirstName = nameTokens[0],
+                LastName = nameTokens[1],
                 EmailAddress = (string)profileJson["email"]
             };
-            return new List<Profile>() { profile };
+            return profile;
         }
     }
 }

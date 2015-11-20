@@ -8,6 +8,8 @@ namespace HackerFinder.EndToEnd
     [Binding]
     public class LocationSearchSteps
     {
+        private static IList<Profile> ReturnedProfiles {  get { return ScenarioContext.Current.Get<IList<Profile>>(); } }
+
         [When(@"I supply location (.*)")]
         public void WhenISupplyLocation(string locationText)
         {
@@ -18,19 +20,21 @@ namespace HackerFinder.EndToEnd
         }
         
         [Then(@"I should have a user named (.*)")]
-        public void ThenIShouldHaveAUserNamed(string userFirstName)
+        public void ThenIShouldHaveAUserNamed(string firstName)
         {
-            var profiles = ScenarioContext.Current.Get<IList<Profile>>();
+            Assert.IsTrue(ReturnedProfiles.Any(pr => pr.FirstName == firstName));
+        }
 
-            Assert.IsTrue(profiles.Any(pr => pr.FirstName == userFirstName));
+        [Then(@"I should have a user with last name (.*)")]
+        public void ThenIShouldHaveAUserWithLastNameDietrich(string lastName)
+        {
+            Assert.IsTrue(ReturnedProfiles.Any(pr => pr.LastName == lastName));
         }
 
         [Then(@"I should have a user with email address (.*)")]
         public void ThenIShouldHaveAUserWithEmailAddressErikDaedtech_Com(string emailAddress)
         {
-            var profiles = ScenarioContext.Current.Get<IList<Profile>>();
-
-            Assert.IsTrue(profiles.Any(p => p.EmailAddress == emailAddress));
+            Assert.IsTrue(ReturnedProfiles.Any(p => p.EmailAddress == emailAddress));
         }
     }
 }
