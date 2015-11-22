@@ -16,12 +16,14 @@ namespace HackerFinder.Acceptance
 
         private static ScenarioContext Current { get { return ScenarioContext.Current; } }
 
+        private static IList<Profile> ReturnedProfiles { get { return Current.Get<IList<Profile>>();} }
+
         [When(@"I supply location (.*)")]
         public void WhenISupplyLocationWheelingIL(string locationText)
         {
             var mockInquisitor = Mock.Create<IGithubInquisitor>();
-            mockInquisitor.Arrange(inquisitor => inquisitor.ExecuteLocationSearch(Arg.AnyString)).Returns(WheelingLocationResult);
-            mockInquisitor.Arrange(inquisitor => inquisitor.ExecuteVerbatimSearch(Arg.AnyString)).Returns(ErikResult);
+            mockInquisitor.Arrange(inquisitor => inquisitor.GetLocationSearchResults(Arg.AnyString)).Returns(WheelingLocationResult);
+            mockInquisitor.Arrange(inquisitor => inquisitor.GetVerbatimSearchResults(Arg.AnyString)).Returns(ErikResult);
 
             var target = new ProfileSearcher(mockInquisitor);
 
@@ -33,26 +35,26 @@ namespace HackerFinder.Acceptance
         [Then(@"I should have a user named (.*)")]
         public void ThenIShouldHaveAUserNamedErik(string firstName)
         {
-            var profiles = Current.Get<IList<Profile>>();
-
-            Assert.IsTrue(profiles.Any(p => p.FirstName == firstName));
+            Assert.IsTrue(ReturnedProfiles.Any(p => p.FirstName == firstName));
 
         }
 
         [Then(@"I should have a user with email address (.*)")]
         public void ThenIShouldHaveAUserWithEmailAddressErikDaedtech_Com(string emailAddress)
         {
-            var profiles = Current.Get<IList<Profile>>();
-
-            Assert.IsTrue(profiles.Any(p => p.EmailAddress == emailAddress));
+            Assert.IsTrue(ReturnedProfiles.Any(p => p.EmailAddress == emailAddress));
         }
 
         [Then(@"I should get back (.*) total results")]
         public void ThenIShouldGetBackTotalResults(int resultCount)
         {
-            var profiles = Current.Get<IList<Profile>>();
+            Assert.AreEqual<int>(resultCount, ReturnedProfiles.Count);
+        }
 
-            Assert.AreEqual<int>(resultCount, profiles.Count);
+        [Then(@"I should have a user with profile url ""(.*)""")]
+        public void ThenIShouldHaveAUserWithProfileUrl(string profileUrl)
+        {
+            Assert.IsTrue(ReturnedProfiles.Any(p => p.ProfileUrl == profileUrl));
         }
 
     }

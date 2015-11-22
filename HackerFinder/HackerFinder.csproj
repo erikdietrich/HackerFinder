@@ -45,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exceptions\GithubQueryingException.cs" />
-    <Compile Include="GithubInquistor.cs" />
+    <Compile Include="GithubInquisitor.cs" />
     <Compile Include="IGithubInquisitor.cs" />
     <Compile Include="Profile.cs" />
     <Compile Include="ProfileSearcher.cs" />

@@ -24,8 +24,8 @@ namespace HackerFinder.Test.ProfileSearcherTests
         {
             Inquisitor = Mock.Create<IGithubInquisitor>();
 
-            Inquisitor.Arrange(i => i.ExecuteLocationSearch(Arg.AnyString)).Returns(WheelingLocationResult);
-            Inquisitor.Arrange(i => i.ExecuteVerbatimSearch(Arg.AnyString)).Returns(ErikResult);
+            Inquisitor.Arrange(i => i.GetLocationSearchResults(Arg.AnyString)).Returns(WheelingLocationResult);
+            Inquisitor.Arrange(i => i.GetVerbatimSearchResults(Arg.AnyString)).Returns(ErikResult);
 
             Target = new ProfileSearcher(Inquisitor);
         }
@@ -55,7 +55,7 @@ namespace HackerFinder.Test.ProfileSearcherTests
         [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
         public void Throw_A_GithubQueryingException_When_Inquisitor_ExecuteUrlQuery_Throws_Exception()
         {
-            Inquisitor.Arrange(i => i.ExecuteLocationSearch(Arg.AnyString)).Throws(new Exception());
+            Inquisitor.Arrange(i => i.GetLocationSearchResults(Arg.AnyString)).Throws(new Exception());
 
             ExtendedAssert.Throws<GithubQueryingException>(() => Target.GetProfilesForLocation("thisdoesnotmatter"));
         }
@@ -63,11 +63,11 @@ namespace HackerFinder.Test.ProfileSearcherTests
         [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
         public void Execute_A_Verbatim_Query_For_URL_Value()
         {
-            Inquisitor.Arrange(i => i.ExecuteLocationSearch(Arg.AnyString)).Returns(WheelingLocationResult);
+            Inquisitor.Arrange(i => i.GetLocationSearchResults(Arg.AnyString)).Returns(WheelingLocationResult);
 
             Target.GetProfilesForLocation("doesntmatter");
 
-            Inquisitor.Assert(i => i.ExecuteVerbatimSearch("https://api.github.com/users/erikdietrich"), Occurs.Once());
+            Inquisitor.Assert(i => i.GetVerbatimSearchResults("https://api.github.com/users/erikdietrich"), Occurs.Once());
         }
 
         [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
@@ -76,11 +76,11 @@ namespace HackerFinder.Test.ProfileSearcherTests
             var updatedUrl = "https://api.github.com/users/someotherguy";
             var updatedProfile = WheelingLocationResult.Replace("https://api.github.com/users/erikdietrich", updatedUrl);
 
-            Inquisitor.Arrange(i => i.ExecuteLocationSearch(Arg.AnyString)).Returns(updatedProfile);
+            Inquisitor.Arrange(i => i.GetLocationSearchResults(Arg.AnyString)).Returns(updatedProfile);
 
             Target.GetProfilesForLocation("dontmatter");
 
-            Inquisitor.Assert(i => i.ExecuteVerbatimSearch(updatedUrl), Occurs.Once());
+            Inquisitor.Assert(i => i.GetVerbatimSearchResults(updatedUrl), Occurs.Once());
         }
 
         [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
@@ -94,7 +94,7 @@ namespace HackerFinder.Test.ProfileSearcherTests
         [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
         public void Not_Throw_An_Exception_When_Name_Has_No_Spaces()
         {
-            Inquisitor.Arrange(i => i.ExecuteVerbatimSearch(Arg.AnyString)).Returns(SingleNameResult);
+            Inquisitor.Arrange(i => i.GetVerbatimSearchResults(Arg.AnyString)).Returns(SingleNameResult);
 
             var profile = Target.GetProfilesForLocation("Wheeling,IL").First();
 

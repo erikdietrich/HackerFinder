@@ -6,8 +6,8 @@ namespace HackerFinder
 {
     public interface IGithubInquisitor
     {
-        string ExecuteLocationSearch(string queryString);
-        string ExecuteVerbatimSearch(string queryString);
+        string GetLocationSearchResults(string queryString);
+        string GetVerbatimSearchResults(string queryString);
 
     }
 }

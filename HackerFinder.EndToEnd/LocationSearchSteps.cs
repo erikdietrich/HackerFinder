@@ -36,5 +36,12 @@ namespace HackerFinder.EndToEnd
         {
             Assert.IsTrue(ReturnedProfiles.Any(p => p.EmailAddress == emailAddress));
         }
+
+        [Then(@"I should have a user with profile url ""(.*)""")]
+        public void ThenIShouldHaveAUserWithProfileUrl(string expectedProfileUrl)
+        {
+            Assert.IsTrue(ReturnedProfiles.Any(p => p.ProfileUrl == expectedProfileUrl));
+        }
+
     }
 }

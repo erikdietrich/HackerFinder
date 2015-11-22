@@ -12,3 +12,7 @@ Scenario: Wheeling Search, last name
 Scenario: Wheeling Search, email address
 	When I supply location Wheeling,IL
 	Then I should have a user with email address erik@daedtech.com
+
+Scenario: Wheeling search, profile URL
+	When I supply location Wheeling,IL
+	Then I should have a user with profile url "https://github.com/erikdietrich"

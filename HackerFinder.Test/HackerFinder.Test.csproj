@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="ExtendedAssert.cs" />
     <Compile Include="GithubInquisitorTests\When_SettingUp_To_QueryGithub_GithubInquisitor_Should.cs" />
+    <Compile Include="GithubInquisitorTests\When_TearingDown_The_Github_Inquisitor_Dispose_Should.cs" />
     <Compile Include="ProfileSearcherTests\ProfileSearcherConstructor_Should.cs" />
     <Compile Include="ProfileSearcherTests\GetProfilesForLocation_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

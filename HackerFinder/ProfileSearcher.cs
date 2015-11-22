@@ -34,7 +34,7 @@ namespace HackerFinder
 
         private IEnumerable<Profile> FindAllProfilesForLocation(string locationText)
         {
-            var contentToString = _inquisitor.ExecuteLocationSearch(locationText);
+            var contentToString = _inquisitor.GetLocationSearchResults(locationText);
 
             var json = JObject.Parse(contentToString);
             var array = JArray.Parse(json["items"].ToString());
@@ -42,7 +42,7 @@ namespace HackerFinder
             for (var index = 0; index < array.Count; index++)
             {
                 var profileUrl = (string)array[index]["url"];
-                var profileRawResult = _inquisitor.ExecuteVerbatimSearch(profileUrl);
+                var profileRawResult = _inquisitor.GetVerbatimSearchResults(profileUrl);
                 var profileJson = JObject.Parse(profileRawResult);
                 var profile = MakeProfileFromJson(profileJson);
 
@@ -56,8 +56,9 @@ namespace HackerFinder
             {
                 FirstName = nameTokens[0],
                 LastName = nameTokens.Count() > 1 ? nameTokens[1] : string.Empty,
-                EmailAddress = (string)profileJson["email"]
-            };
+                EmailAddress = (string)profileJson["email"],
+                ProfileUrl = (string)profileJson["html_url"]
+        };
             return profile;
         }
     }
