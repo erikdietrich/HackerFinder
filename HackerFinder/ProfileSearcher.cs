@@ -24,7 +24,7 @@ namespace HackerFinder
 
             try
             {
-                return FindAllProfilesForLocation(locationText);
+                return FindAllProfilesForLocation(locationText).ToList();
             }
             catch (Exception ex)
             {
@@ -32,17 +32,22 @@ namespace HackerFinder
             }            
         }
 
-        private IList<Profile> FindAllProfilesForLocation(string locationText)
+        private IEnumerable<Profile> FindAllProfilesForLocation(string locationText)
         {
             var contentToString = _inquisitor.ExecuteLocationSearch(locationText);
+
             var json = JObject.Parse(contentToString);
-            var profileUrl = (string)json["items"][0]["url"];
+            var array = JArray.Parse(json["items"].ToString());
 
-            var profileRawResult = _inquisitor.ExecuteVerbatimSearch(profileUrl);
-            var profileJson = JObject.Parse(profileRawResult);
-            var profile = MakeProfileFromJson(profileJson);
+            for (var index = 0; index < array.Count; index++)
+            {
+                var profileUrl = (string)array[index]["url"];
+                var profileRawResult = _inquisitor.ExecuteVerbatimSearch(profileUrl);
+                var profileJson = JObject.Parse(profileRawResult);
+                var profile = MakeProfileFromJson(profileJson);
 
-            return new List<Profile>() { profile };
+                yield return profile;
+            }
         }
         private static Profile MakeProfileFromJson(JObject profileJson)
         {
@@ -50,7 +55,7 @@ namespace HackerFinder
             var profile = new Profile()
             {
                 FirstName = nameTokens[0],
-                LastName = nameTokens[1],
+                LastName = nameTokens.Count() > 1 ? nameTokens[1] : string.Empty,
                 EmailAddress = (string)profileJson["email"]
             };
             return profile;

@@ -47,5 +47,13 @@ namespace HackerFinder.Acceptance
             Assert.IsTrue(profiles.Any(p => p.EmailAddress == emailAddress));
         }
 
+        [Then(@"I should get back (.*) total results")]
+        public void ThenIShouldGetBackTotalResults(int resultCount)
+        {
+            var profiles = Current.Get<IList<Profile>>();
+
+            Assert.AreEqual<int>(resultCount, profiles.Count);
+        }
+
     }
 }

@@ -30,3 +30,36 @@
   "created_at": "2011-12-01T07:49:30Z",
   "updated_at": "2015-11-12T15:14:49Z"
 }
+
+{
+  "login": "NightingaleConant",
+  "id": 2112348,
+  "avatar_url": "https://avatars.githubusercontent.com/u/2112348?v=3",
+  "gravatar_id": "",
+  "url": "https://api.github.com/users/NightingaleConant",
+  "html_url": "https://github.com/NightingaleConant",
+  "followers_url": "https://api.github.com/users/NightingaleConant/followers",
+  "following_url": "https://api.github.com/users/NightingaleConant/following{/other_user}",
+  "gists_url": "https://api.github.com/users/NightingaleConant/gists{/gist_id}",
+  "starred_url": "https://api.github.com/users/NightingaleConant/starred{/owner}{/repo}",
+  "subscriptions_url": "https://api.github.com/users/NightingaleConant/subscriptions",
+  "organizations_url": "https://api.github.com/users/NightingaleConant/orgs",
+  "repos_url": "https://api.github.com/users/NightingaleConant/repos",
+  "events_url": "https://api.github.com/users/NightingaleConant/events{/privacy}",
+  "received_events_url": "https://api.github.com/users/NightingaleConant/received_events",
+  "type": "Organization",
+  "site_admin": false,
+  "name": "NightingaleConant",
+  "company": null,
+  "blog": "http://www.nightingale.com",
+  "location": "Wheeling, IL",
+  "email": "cynthia@borbas.org",
+  "hireable": null,
+  "bio": null,
+  "public_repos": 1,
+  "public_gists": 0,
+  "followers": 0,
+  "following": 0,
+  "created_at": "2012-08-07T20:34:39Z",
+  "updated_at": "2014-06-10T20:08:45Z"
+}
