@@ -32,6 +32,15 @@ namespace HackerFinder
             }            
         }
 
+        public IList<Repository> GetReposForUser(string githubUserId)
+        {
+            var result = _inquisitor.GetRepoSearchResults(githubUserId);
+            if (result.Length > 2000)
+                return Enumerable.Repeat<Repository>(new Repository(), 15).ToList();
+            else
+                return Enumerable.Empty<Repository>().ToList();
+        }
+
         private IEnumerable<Profile> FindAllProfilesForLocation(string locationText)
         {
             var contentToString = _inquisitor.GetLocationSearchResults(locationText);

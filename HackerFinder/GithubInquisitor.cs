@@ -12,6 +12,10 @@ namespace HackerFinder
 
         public HttpClient Client { get; } = new HttpClient();
 
+        public string GetRepoSearchResults(string repoId)
+        {
+            throw new NotImplementedException();
+        }
         public GithubInquisitor()
         {
             Client.DefaultRequestHeaders.Add(UserAgentKey, UserAgentValue);
@@ -30,9 +34,12 @@ namespace HackerFinder
             var result = task.Result;
             return result.Content.ReadAsStringAsync().Result;
         }
+
         public void Dispose()
         {
             Client.Dispose();
         }
+
+        
     }
 }
