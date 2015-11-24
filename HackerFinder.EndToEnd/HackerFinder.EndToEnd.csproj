@@ -63,6 +63,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ActualGithubJSON\SingleErikRepo.json" />
+    <None Include="ActualGithubJSON\ErikRepos.json" />
     <None Include="App.config" />
     <None Include="LocationSearch.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -77,9 +79,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="JustErik.txt" />
-    <Content Include="ProfileJSON.txt" />
-    <Content Include="WheelingJSON.txt" />
+    <Content Include="ActualGithubJSON\JustErik.txt" />
+    <Content Include="ActualGithubJSON\ProfileJSON.txt" />
+    <Content Include="ActualGithubJSON\WheelingJSON.txt" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

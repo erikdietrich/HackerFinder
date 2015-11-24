@@ -34,10 +34,20 @@ namespace HackerFinder
 
         public IList<Repository> GetReposForUser(string githubUserId)
         {
-            var result = _inquisitor.GetRepoSearchResults(githubUserId);
-            if (result.Length > 2000)
-                return Enumerable.Repeat<Repository>(new Repository(), 15).ToList();
-            else
+            var jsonFromInquisitor = _inquisitor.GetRepoSearchResults(githubUserId);
+
+            try
+            {
+                var array = JArray.Parse(jsonFromInquisitor);
+                var list = new List<Repository>();
+
+                foreach (var item in array)
+                    list.Add(new Repository() { Name = (string)item["name"] });
+
+                return list;
+            }
+            catch
+            { }
                 return Enumerable.Empty<Repository>().ToList();
         }
 
