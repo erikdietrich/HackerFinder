@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exceptions\GithubQueryingException.cs" />
+    <Compile Include="Extensions\JsonNetExtensions.cs" />
     <Compile Include="GithubInquisitor.cs" />
     <Compile Include="IGithubInquisitor.cs" />
     <Compile Include="Profile.cs" />

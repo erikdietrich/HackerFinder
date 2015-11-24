@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+using HackerFinder.Extensions;
+
 namespace HackerFinder
 {
     public class ProfileSearcher
@@ -34,21 +36,21 @@ namespace HackerFinder
 
         public IList<Repository> GetReposForUser(string githubUserId)
         {
+            if (string.IsNullOrEmpty(githubUserId))
+                throw new ArgumentException(nameof(githubUserId));
+
             var jsonFromInquisitor = _inquisitor.GetRepoSearchResults(githubUserId);
 
             try
             {
-                var array = JArray.Parse(jsonFromInquisitor);
-                var list = new List<Repository>();
-
-                foreach (var item in array)
-                    list.Add(new Repository() { Name = (string)item["name"] });
-
-                return list;
+                var arrayOfTokens = JArray.Parse(jsonFromInquisitor);
+                return arrayOfTokens.Select(jt => MakeRepositoryFromToken(jt)).ToList();
             }
             catch
-            { }
+            {
                 return Enumerable.Empty<Repository>().ToList();
+            }
+
         }
 
         private IEnumerable<Profile> FindAllProfilesForLocation(string locationText)
@@ -79,6 +81,16 @@ namespace HackerFinder
                 ProfileUrl = (string)profileJson["html_url"]
         };
             return profile;
+        }
+
+        private static Repository MakeRepositoryFromToken(JToken token)
+        {
+            return new Repository()
+            {
+                Name = token.KeyToString("name"),
+                Url = token.KeyToString("html_url"),
+                Language = token.KeyToString("language")
+            };
         }
     }
 }

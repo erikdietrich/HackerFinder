@@ -21,6 +21,7 @@ namespace HackerFinder.Test.ProfileSearcherTests
         public void BeforeEachTest()
         {
             Inquisitor = Mock.Create<IGithubInquisitor>();
+            Inquisitor.Arrange(i => i.GetRepoSearchResults(Arg.AnyString)).Returns(SingleResult);
 
             Target = new ProfileSearcher(Inquisitor);
         }
@@ -38,8 +39,6 @@ namespace HackerFinder.Test.ProfileSearcherTests
         [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
         public void Should_Return_SingleProfile_For_Single_Result()
         {
-            Inquisitor.Arrange(i => i.GetRepoSearchResults(Arg.AnyString)).Returns(SingleResult);
-
             var repositoryCount = Target.GetReposForUser("whatever").Count();
 
             Assert.AreEqual<int>(1, repositoryCount);
@@ -48,11 +47,31 @@ namespace HackerFinder.Test.ProfileSearcherTests
         [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
         public void Should_Return_A_Profile_With_Name_Matching_SingleResult_Name()
         {
-            Inquisitor.Arrange(i => i.GetRepoSearchResults(Arg.AnyString)).Returns(SingleResult);
-
             var firstRepo = Target.GetReposForUser("dontmatter").First();
 
             Assert.AreEqual<string>("ASPNETWebAPISamples", firstRepo.Name);
+        }
+
+        [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
+        public void Should_Return_A_Profile_With_Url_Matching_SingleResult_Html_Url()
+        {
+            var firstRepo = Target.GetReposForUser("whatever").First();
+
+            Assert.AreEqual<string>("https://github.com/erikdietrich/ASPNETWebAPISamples", firstRepo.Url);
+        }
+
+        [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
+        public void Should_Return_A_Profile_With_Language_Matching_SingleResult_Language()
+        {
+            var firstRepo = Target.GetReposForUser("stilldoesn'tmatter").First();
+
+            Assert.AreEqual<string>("JavaScript", firstRepo.Language);
+        }
+
+        [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
+        public void Throw_Exception_When_githubUserId_Is_Null()
+        {
+            ExtendedAssert.Throws<ArgumentException>(() => Target.GetReposForUser(null));
         }
     }
 }
