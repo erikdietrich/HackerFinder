@@ -40,19 +40,18 @@ namespace HackerFinder
                 throw new ArgumentException(nameof(githubUserId));
 
             var jsonFromInquisitor = _inquisitor.GetRepoSearchResults(githubUserId);
+            return BuildRepoListFromJson(jsonFromInquisitor);
+        }
 
-            try
+        private static IList<Repository> BuildRepoListFromJson(string jsonFromInquisitor)
+        {
+            if (JToken.Parse(jsonFromInquisitor) is JArray)
             {
                 var arrayOfTokens = JArray.Parse(jsonFromInquisitor);
                 return arrayOfTokens.Select(jt => MakeRepositoryFromToken(jt)).ToList();
             }
-            catch
-            {
-                return Enumerable.Empty<Repository>().ToList();
-            }
-
+            return Enumerable.Empty<Repository>().ToList();
         }
-
         private IEnumerable<Profile> FindAllProfilesForLocation(string locationText)
         {
             var contentToString = _inquisitor.GetLocationSearchResults(locationText);

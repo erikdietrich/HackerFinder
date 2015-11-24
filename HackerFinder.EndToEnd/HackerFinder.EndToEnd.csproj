@@ -61,6 +61,12 @@
     </Compile>
     <Compile Include="LocationSearchSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepoSearch.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepoSearch.feature</DependentUpon>
+    </Compile>
+    <Compile Include="RepoSearchSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ActualGithubJSON\SingleErikRepo.json" />
@@ -71,8 +77,16 @@
       <LastGenOutput>LocationSearch.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <None Include="RepoSearch.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>RepoSearch.feature.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HackerFinder.Acceptance\HackerFinder.Acceptance.csproj">
+      <Project>{e34fdcc9-641d-457b-87ff-862d47fc7f55}</Project>
+      <Name>HackerFinder.Acceptance</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HackerFinder\HackerFinder.csproj">
       <Project>{25dccd64-4fcb-4a3a-a212-d53a83d77167}</Project>
       <Name>HackerFinder</Name>

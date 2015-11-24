@@ -12,9 +12,11 @@ namespace HackerFinder
 
         public HttpClient Client { get; } = new HttpClient();
 
-        public string GetRepoSearchResults(string repoId)
+        public string GetRepoSearchResults(string githubUserId)
         {
-            throw new NotImplementedException();
+            var task = Client.GetAsync($"https://api.github.com/users/{githubUserId}/repos");
+            var result = task.Result;
+            return result.Content.ReadAsStringAsync().Result;
         }
         public GithubInquisitor()
         {

@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace HackerFinder.Acceptance
+namespace HackerFinder.EndToEnd
 {
     using TechTalk.SpecFlow;
     
@@ -48,7 +48,7 @@ namespace HackerFinder.Acceptance
             if (((TechTalk.SpecFlow.FeatureContext.Current != null) 
                         && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "RepoSearch")))
             {
-                HackerFinder.Acceptance.RepoSearchFeature.FeatureSetup(null);
+                HackerFinder.EndToEnd.RepoSearchFeature.FeatureSetup(null);
             }
         }
         
@@ -69,11 +69,11 @@ namespace HackerFinder.Acceptance
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get repo count for user")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get repos for user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RepoSearch")]
-        public virtual void GetRepoCountForUser()
+        public virtual void GetReposForUser()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get repo count for user", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get repos for user", ((string[])(null)));
 #line 3
 this.ScenarioSetup(scenarioInfo);
 #line 4
