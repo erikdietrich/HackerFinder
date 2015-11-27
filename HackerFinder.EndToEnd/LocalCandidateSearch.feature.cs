@@ -79,7 +79,7 @@ namespace HackerFinder.EndToEnd
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7
- testRunner.When("I search Wheeling and C#", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I search Wheeling,IL and C#", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 8
  testRunner.Then("The result should include erikdietrich", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

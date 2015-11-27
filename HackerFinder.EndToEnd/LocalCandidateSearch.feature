@@ -4,5 +4,5 @@
 	So that I can have their contact info as possible matches
 
 Scenario: Wheeling users with C# repositories
-	When I search Wheeling and C#
+	When I search Wheeling,IL and C#
 	Then The result should include erikdietrich
