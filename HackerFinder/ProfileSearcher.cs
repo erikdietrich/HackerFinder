@@ -45,9 +45,8 @@ namespace HackerFinder
 
         public IList<Profile> SearchForLocalCandidates(string location, string language)
         {
-            //var locationProfiles = GetProfilesForLocation(location);
-            //var matchingProfiles = locationProfiles.Where(p => GetReposForUser(p.))
-            return null;
+            var profilesForLocation = GetProfilesForLocation(location);
+            return profilesForLocation.Where(p => GetReposForUser(p.Username).Any(r => r.Language == language)).ToList();
         }
 
         private static IList<Repository> BuildRepoListFromJson(string jsonFromInquisitor)
@@ -59,6 +58,7 @@ namespace HackerFinder
             }
             return Enumerable.Empty<Repository>().ToList();
         }
+
         private IEnumerable<Profile> FindAllProfilesForLocation(string locationText)
         {
             var contentToString = _inquisitor.GetLocationSearchResults(locationText);
@@ -76,15 +76,17 @@ namespace HackerFinder
                 yield return profile;
             }
         }
+
         private static Profile MakeProfileFromJson(JObject profileJson)
         {
-            var nameTokens = ((string)profileJson["name"]).Split(' ');
+            var nameTokens = profileJson.KeyToString("name").Split(' ');
             var profile = new Profile()
             {
                 FirstName = nameTokens[0],
                 LastName = nameTokens.Count() > 1 ? nameTokens[1] : string.Empty,
-                EmailAddress = (string)profileJson["email"],
-                ProfileUrl = (string)profileJson["html_url"]
+                EmailAddress = profileJson.KeyToString("email"),
+                ProfileUrl = profileJson.KeyToString("html_url"),
+                Username = profileJson.KeyToString("login")
             };
             return profile;
         }

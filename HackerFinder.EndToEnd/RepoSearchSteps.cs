@@ -5,13 +5,13 @@ using System.Collections.Generic;
 using TechTalk.SpecFlow;
 
 using static HackerFinder.Acceptance.ContextRepository;
-
+using HackerFinder.Domain;
 namespace HackerFinder.EndToEnd
 {
     [Binding]
     public class RepoSearchSteps
     {
-        private static IList<HackerFinder.Domain.Repository> ReturnedRepos { get { return GetFromContext<IList<HackerFinder.Domain.Repository>>(); } }
+        private static IList<Repository> ReturnedRepos { get { return GetFromContext<IList<Repository>>(); } }
 
         [When(@"I do a repo search for user (.*)")]
         public void WhenIDoARepoSearchForUserErikdietrich(string githubUserId)
@@ -31,7 +31,7 @@ namespace HackerFinder.EndToEnd
         [Then(@"First repo should have the following properties")]
         public void ThenFirstRepoShouldHaveTheFollowingProperties(Table table)
         {
-            var firstRepo = GetFromContext<IList<HackerFinder.Domain.Repository>>().First();
+            var firstRepo = GetFromContext<IList<Repository>>().First();
             var row = table.Rows[0];
 
             Assert.AreEqual<string>(row["Name"], firstRepo.Name);

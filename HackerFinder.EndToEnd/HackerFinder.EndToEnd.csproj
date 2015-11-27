@@ -54,6 +54,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="LocalCandidateSearch.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalCandidateSearch.feature</DependentUpon>
+    </Compile>
+    <Compile Include="LocalCandidateSearchSteps.cs" />
     <Compile Include="LocationSearch.feature.cs">
       <DependentUpon>LocationSearch.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -72,6 +78,10 @@
     <None Include="ActualGithubJSON\SingleErikRepo.json" />
     <None Include="ActualGithubJSON\ErikRepos.json" />
     <None Include="App.config" />
+    <None Include="LocalCandidateSearch.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LocalCandidateSearch.feature.cs</LastGenOutput>
+    </None>
     <None Include="LocationSearch.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>LocationSearch.feature.cs</LastGenOutput>

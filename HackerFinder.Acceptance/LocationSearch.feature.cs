@@ -131,6 +131,22 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Wheeling search, username only")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "LocationSearch")]
+        public virtual void WheelingSearchUsernameOnly()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Wheeling search, username only", ((string[])(null)));
+#line 20
+this.ScenarioSetup(scenarioInfo);
+#line 21
+ testRunner.When("I supply location Wheeling,IL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 22
+ testRunner.Then("I should have a user with username erikdietrich", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

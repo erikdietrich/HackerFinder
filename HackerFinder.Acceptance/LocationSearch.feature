@@ -16,3 +16,7 @@ Scenario: Wheeling search, correct number of total results
 Scenario: Wheeling search, profile url only
 	When I supply location Wheeling,IL
 	Then I should have a user with profile url "https://github.com/erikdietrich"
+
+Scenario: Wheeling search, username only
+	When I supply location Wheeling,IL
+	Then I should have a user with username erikdietrich

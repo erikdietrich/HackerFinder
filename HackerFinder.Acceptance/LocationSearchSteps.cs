@@ -57,5 +57,11 @@ namespace HackerFinder.Acceptance
             Assert.IsTrue(ReturnedProfiles.Any(p => p.ProfileUrl == profileUrl));
         }
 
+        [Then(@"I should have a user with username (.*)")]
+        public void ThenIShouldHaveAUserWithUsernameErikdietrich(string expectedUsername)
+        {
+            Assert.IsTrue(ReturnedProfiles.Any(p => p.Username == expectedUsername));
+        }
+
     }
 }
