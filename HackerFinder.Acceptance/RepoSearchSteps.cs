@@ -31,7 +31,7 @@ namespace HackerFinder.Acceptance
         [Then(@"I should have (.*) repos")]
         public void ThenIShouldHaveRepos(int repoCount)
         {
-            var repos = GetFromContext<IList<Repository>>();
+            var repos = GetFromContext<IList<HackerFinder.Domain.Repository>>();
 
             Assert.AreEqual<int>(repoCount, repos.Count);
         }
@@ -39,7 +39,7 @@ namespace HackerFinder.Acceptance
         [Then(@"First repo should have the following properties")]
         public void ThenARepoShouldHaveTheFollowingProperties(Table table)
         {
-            var firstRepo = GetFromContext<IList<Repository>>().First();
+            var firstRepo = GetFromContext<IList<HackerFinder.Domain.Repository>>().First();
             var row = table.Rows[0];
 
             Assert.AreEqual<string>(row["Name"], firstRepo.Name);

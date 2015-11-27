@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using HackerFinder.Extensions;
-
+using HackerFinder.Domain;
 namespace HackerFinder
 {
     public class ProfileSearcher
@@ -21,7 +21,7 @@ namespace HackerFinder
 
         public IList<Profile> GetProfilesForLocation(string locationText)
         {
-            if(locationText == null)
+            if (locationText == null)
                 throw new ArgumentNullException(nameof(locationText));
 
             try
@@ -31,7 +31,7 @@ namespace HackerFinder
             catch (Exception ex)
             {
                 throw new GithubQueryingException("A problem occurred searching Github.", ex);
-            }            
+            }
         }
 
         public IList<Repository> GetReposForUser(string githubUserId)
@@ -41,6 +41,13 @@ namespace HackerFinder
 
             var jsonFromInquisitor = _inquisitor.GetRepoSearchResults(githubUserId);
             return BuildRepoListFromJson(jsonFromInquisitor);
+        }
+
+        public IList<Profile> SearchForLocalCandidates(string location, string language)
+        {
+            //var locationProfiles = GetProfilesForLocation(location);
+            //var matchingProfiles = locationProfiles.Where(p => GetReposForUser(p.))
+            return null;
         }
 
         private static IList<Repository> BuildRepoListFromJson(string jsonFromInquisitor)
@@ -78,7 +85,7 @@ namespace HackerFinder
                 LastName = nameTokens.Count() > 1 ? nameTokens[1] : string.Empty,
                 EmailAddress = (string)profileJson["email"],
                 ProfileUrl = (string)profileJson["html_url"]
-        };
+            };
             return profile;
         }
 

@@ -8,7 +8,7 @@ namespace HackerFinder.EndToEnd
     [Binding]
     public class LocationSearchSteps
     {
-        private static IList<Profile> ReturnedProfiles {  get { return ScenarioContext.Current.Get<IList<Profile>>(); } }
+        private static IList<HackerFinder.Domain.Profile> ReturnedProfiles {  get { return ScenarioContext.Current.Get<IList<HackerFinder.Domain.Profile>>(); } }
 
         [When(@"I supply location (.*)")]
         public void WhenISupplyLocation(string locationText)

@@ -48,10 +48,10 @@
     <Compile Include="Extensions\JsonNetExtensions.cs" />
     <Compile Include="GithubInquisitor.cs" />
     <Compile Include="IGithubInquisitor.cs" />
-    <Compile Include="Profile.cs" />
+    <Compile Include="Domain\Profile.cs" />
     <Compile Include="ProfileSearcher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository.cs" />
+    <Compile Include="Domain\Repository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

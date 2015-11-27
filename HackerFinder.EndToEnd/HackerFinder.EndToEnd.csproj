@@ -93,9 +93,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ActualGithubJSON\JustErik.txt" />
-    <Content Include="ActualGithubJSON\ProfileJSON.txt" />
-    <Content Include="ActualGithubJSON\WheelingJSON.txt" />
+    <None Include="ActualGithubJSON\JustErik.json" />
+    <None Include="ActualGithubJSON\Profile.json" />
+    <None Include="ActualGithubJSON\Wheeling.json" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

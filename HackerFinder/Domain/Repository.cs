@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace HackerFinder
+namespace HackerFinder.Domain
 {
     public class Repository
     {

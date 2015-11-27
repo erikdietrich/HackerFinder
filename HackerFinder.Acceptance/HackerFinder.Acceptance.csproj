@@ -59,6 +59,12 @@
   </Choose>
   <ItemGroup>
     <Compile Include="ContextRepository.cs" />
+    <Compile Include="LocalCandidateSearch.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalCandidateSearch.feature</DependentUpon>
+    </Compile>
+    <Compile Include="LocalCandidateSearchSteps.cs" />
     <Compile Include="LocationSearch.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -75,6 +81,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="LocalCandidateSearch.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>LocalCandidateSearch.feature.cs</LastGenOutput>
+    </None>
     <None Include="LocationSearch.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>LocationSearch.feature.cs</LastGenOutput>
