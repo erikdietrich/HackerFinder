@@ -13,6 +13,11 @@ namespace HackerFinder.Console.Test
     {
         private CommandLineParser Target { get; set; }
 
+        private const string Location = "Wheeling,IL";
+        private const string Language = "C#";
+
+        private static readonly string[] Args = new string[] { "-t", Language, "-l", Location };
+
         [TestInitialize]
         public void BeforeEachTest()
         {
@@ -28,31 +33,24 @@ namespace HackerFinder.Console.Test
         [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
         public void Set_Location_To_Value_Following_l_Flag()
         {
-            const string location = "Wheeling, IL";
+            Target.Parse(Args);
 
-            var args = new string[] { "-l", location };
-
-            Target.Parse(args);
-
-            Assert.AreEqual<string>(location, Target.Location);
+            Assert.AreEqual<string>(Location, Target.Location);
         }
 
-    }
-    public class CommandLineParser
-    {
-        private readonly IFluentCommandLineParser _parser;
-        public string Location { get; set; }
-
-        public CommandLineParser(IFluentCommandLineParser parser)
+        [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
+        public void Set_Language_To_Value_Following_t_Flag()
         {
-            _parser = parser;
+            Target.Parse(Args);
+
+            Assert.AreEqual<string>(Language, Target.Language);
         }
 
-        public void Parse(string[] commandLineArgs)
+        [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
+        public void Throw_Exception_On_Null_Constructor_Argument()
         {
-            _parser.Setup<string>('l').Callback(l => Location = l);
-
-            _parser.Parse(commandLineArgs);
+            ExtendedAssert.Throws<ArgumentNullException>(() => new CommandLineParser(null));
         }
+
     }
 }

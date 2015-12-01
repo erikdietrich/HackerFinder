@@ -2,8 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+using static System.Console;
 
 namespace HackerFinder.Console
 {
@@ -11,7 +11,17 @@ namespace HackerFinder.Console
     {
         static void Main(string[] args)
         {
-            var processor = new FluentCommandLineParser();
+            var parser = new CommandLineParser(new FluentCommandLineParser());
+            parser.Parse(args);
+
+            var searcher = new ProfileSearcher(new GithubInquisitor());
+
+            var candidates = searcher.SearchForLocalCandidates(parser.Location, parser.Language);
+
+            foreach(var candidate in candidates)
+                WriteLine($"Candidate is named {candidate.FirstName} {candidate.LastName} and email address is {candidate.EmailAddress}");
+
+            ReadLine();
         }
     }
 }

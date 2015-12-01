@@ -54,11 +54,18 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="ExtendedAssert.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="When_Parsing_Command_Line_Arguments_Parser_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HackerFinder.Console\HackerFinder.Console.csproj">
+      <Project>{5f9493b7-abf9-471e-98a0-c43c6a7d45d1}</Project>
+      <Name>HackerFinder.Console</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
