@@ -84,11 +84,13 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Url",
-                        "Language"});
+                        "Language",
+                        "Download"});
             table1.AddRow(new string[] {
                         "ASPNETWebAPISamples",
                         "https://github.com/erikdietrich/ASPNETWebAPISamples",
-                        "JavaScript"});
+                        "JavaScript",
+                        "https://github.com/erikdietrich/ASPNETWebAPISamples/archive/master.zip"});
 #line 6
  testRunner.And("First repo should have the following properties", ((string)(null)), table1, "And ");
 #line hidden

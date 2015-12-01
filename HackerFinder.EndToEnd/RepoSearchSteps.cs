@@ -37,6 +37,7 @@ namespace HackerFinder.EndToEnd
             Assert.AreEqual<string>(row["Name"], firstRepo.Name);
             Assert.AreEqual<string>(row["Url"], firstRepo.Url);
             Assert.AreEqual<string>(row["Language"], firstRepo.Language);
+            Assert.AreEqual<string>(row["Download"], firstRepo.DownloadUrl);
         }
     }
 }

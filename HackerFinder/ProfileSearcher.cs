@@ -68,7 +68,7 @@ namespace HackerFinder
 
             for (var index = 0; index < array.Count; index++)
             {
-                var profileUrl = (string)array[index]["url"];
+                var profileUrl = array[index].KeyToString("url");
                 var profileRawResult = _inquisitor.GetVerbatimSearchResults(profileUrl);
                 var profileJson = JObject.Parse(profileRawResult);
                 var profile = MakeProfileFromJson(profileJson);

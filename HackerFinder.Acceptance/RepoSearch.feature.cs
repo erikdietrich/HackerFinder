@@ -69,11 +69,11 @@ namespace HackerFinder.Acceptance
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get repo count for user")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Get repo for a user")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "RepoSearch")]
-        public virtual void GetRepoCountForUser()
+        public virtual void GetRepoForAUser()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get repo count for user", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get repo for a user", ((string[])(null)));
 #line 3
 this.ScenarioSetup(scenarioInfo);
 #line 4
@@ -84,11 +84,13 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Url",
-                        "Language"});
+                        "Language",
+                        "Download"});
             table1.AddRow(new string[] {
                         "ASPNETWebAPISamples",
                         "https://github.com/erikdietrich/ASPNETWebAPISamples",
-                        "JavaScript"});
+                        "JavaScript",
+                        "https://github.com/erikdietrich/ASPNETWebAPISamples/archive/master.zip"});
 #line 6
  testRunner.And("First repo should have the following properties", ((string)(null)), table1, "And ");
 #line hidden
