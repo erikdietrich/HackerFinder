@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerFinder.Acceptance", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerFinder.EndToEnd", "HackerFinder.EndToEnd\HackerFinder.EndToEnd.csproj", "{0CB125EE-6BB0-4B22-A530-5F04B19C9A9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerFinder.Console", "HackerFinder.Console\HackerFinder.Console.csproj", "{5F9493B7-ABF9-471E-98A0-C43C6A7D45D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerFinder.Console.Test", "HackerFinder.Console.Test\HackerFinder.Console.Test.csproj", "{126F32E7-3803-4FD0-A19C-86DD27F669E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{0CB125EE-6BB0-4B22-A530-5F04B19C9A9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CB125EE-6BB0-4B22-A530-5F04B19C9A9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CB125EE-6BB0-4B22-A530-5F04B19C9A9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F9493B7-ABF9-471E-98A0-C43C6A7D45D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F9493B7-ABF9-471E-98A0-C43C6A7D45D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F9493B7-ABF9-471E-98A0-C43C6A7D45D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F9493B7-ABF9-471E-98A0-C43C6A7D45D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{126F32E7-3803-4FD0-A19C-86DD27F669E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{126F32E7-3803-4FD0-A19C-86DD27F669E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{126F32E7-3803-4FD0-A19C-86DD27F669E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{126F32E7-3803-4FD0-A19C-86DD27F669E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
