@@ -3,13 +3,13 @@ using System.Linq;
 using System.Collections.Generic;
 using TechTalk.SpecFlow;
 using System;
-
+using HackerFinder.Domain;
 namespace HackerFinder.EndToEnd
 {
     [Binding]
     public class LocationSearchSteps
     {
-        private static IList<HackerFinder.Domain.Profile> ReturnedProfiles {  get { return ScenarioContext.Current.Get<IList<HackerFinder.Domain.Profile>>(); } }
+        private static IList<Profile> ReturnedProfiles { get { return ScenarioContext.Current.Get<IList<Profile>>(); } }
 
         [When(@"I supply location (.*)")]
         public void WhenISupplyLocation(string locationText)

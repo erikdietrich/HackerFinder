@@ -19,8 +19,13 @@ namespace HackerFinder.Console
 
             var candidates = searcher.GetProfilesForLocationByTechnology(parser.Location, parser.Language);
 
-            foreach(var candidate in candidates)
+            foreach (var candidate in candidates)
+            {
                 WriteLine($"Candidate is named {candidate.FirstName} {candidate.LastName} and email address is {candidate.EmailAddress}");
+                foreach (var repo in candidate.Repos)
+                    WriteLine($"\tRepository named {repo.Name} can be downloaded at {repo.DownloadUrl}.");
+            }
+
 
             ReadLine();
         }
