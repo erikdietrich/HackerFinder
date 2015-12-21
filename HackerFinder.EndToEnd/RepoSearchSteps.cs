@@ -16,12 +16,13 @@ namespace HackerFinder.EndToEnd
         [When(@"I do a repo search for user (.*)")]
         public void WhenIDoARepoSearchForUserErikdietrich(string githubUserId)
         {
-            var searcher = new ProfileSearcher(new GithubInquisitor());
+            var inquisitor = new GithubInquisitor("erikdietrich", Environment.GetEnvironmentVariable("GithubPass", EnvironmentVariableTarget.User));
+            var searcher = new ProfileSearcher(inquisitor);
             var repos = searcher.GetReposForUser(githubUserId);
 
             SetInContext(repos);
         }
-        
+
         [Then(@"I should have (.*) repos")]
         public void ThenIShouldHaveRepos(int repoCount)
         {

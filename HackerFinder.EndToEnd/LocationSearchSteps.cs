@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using TechTalk.SpecFlow;
+using System;
 
 namespace HackerFinder.EndToEnd
 {
@@ -13,7 +14,8 @@ namespace HackerFinder.EndToEnd
         [When(@"I supply location (.*)")]
         public void WhenISupplyLocation(string locationText)
         {
-            var searcher = new ProfileSearcher(new GithubInquisitor());
+            var inquisitor = new GithubInquisitor("erikdietrich", Environment.GetEnvironmentVariable("GithubPass", EnvironmentVariableTarget.User));
+            var searcher = new ProfileSearcher(inquisitor);
             var profiles = searcher.GetProfilesForLocation(locationText);
 
             ScenarioContext.Current.Set(profiles);

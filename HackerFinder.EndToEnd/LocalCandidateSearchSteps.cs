@@ -21,7 +21,8 @@ namespace HackerFinder.EndToEnd
         [When(@"I search (.*) and (.*)")]
         public void WhenISearchAnd(string location, string language)
         {
-            var searcher = new ProfileSearcher(new GithubInquisitor());
+            var inquisitor = new GithubInquisitor("erikdietrich", Environment.GetEnvironmentVariable("GithubPass", EnvironmentVariableTarget.User));
+            var searcher = new ProfileSearcher(inquisitor);
             ReturnedProfiles = searcher.GetProfilesForLocationByTechnology(location, language);
         }
         

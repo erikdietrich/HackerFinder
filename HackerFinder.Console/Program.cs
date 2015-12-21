@@ -14,7 +14,8 @@ namespace HackerFinder.Console
             var parser = new CommandLineParser(new FluentCommandLineParser());
             parser.Parse(args);
 
-            var searcher = new ProfileSearcher(new GithubInquisitor());
+            var inquisitor = new GithubInquisitor("erikdietrich", Environment.GetEnvironmentVariable("GithubPass", EnvironmentVariableTarget.User));
+            var searcher = new ProfileSearcher(inquisitor);
 
             var candidates = searcher.GetProfilesForLocationByTechnology(parser.Location, parser.Language);
 
