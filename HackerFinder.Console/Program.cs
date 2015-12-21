@@ -16,7 +16,7 @@ namespace HackerFinder.Console
 
             var searcher = new ProfileSearcher(new GithubInquisitor());
 
-            var candidates = searcher.SearchForLocalCandidates(parser.Location, parser.Language);
+            var candidates = searcher.GetProfilesForLocationByTechnology(parser.Location, parser.Language);
 
             foreach(var candidate in candidates)
                 WriteLine($"Candidate is named {candidate.FirstName} {candidate.LastName} and email address is {candidate.EmailAddress}");

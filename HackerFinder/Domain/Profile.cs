@@ -11,5 +11,7 @@ namespace HackerFinder.Domain
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string ProfileUrl { get; set; }
+
+        public IEnumerable<Repository> Repos { get; set; } = new List<Repository>();
     }
 }

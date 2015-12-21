@@ -34,6 +34,12 @@ namespace HackerFinder
             }
         }
 
+        public IList<Profile> GetProfilesForLocationByTechnology(string location, string language)
+        {
+            var profilesForLocation = GetProfilesForLocation(location);
+            return profilesForLocation.Where(p => GetReposForUser(p.Username).Any(r => r.Language == language)).ToList();
+        }
+
         public IList<Repository> GetReposForUser(string githubUserId)
         {
             if (string.IsNullOrEmpty(githubUserId))
@@ -41,12 +47,6 @@ namespace HackerFinder
 
             var jsonFromInquisitor = _inquisitor.GetRepoSearchResults(githubUserId);
             return BuildRepoListFromJson(jsonFromInquisitor);
-        }
-
-        public IList<Profile> SearchForLocalCandidates(string location, string language)
-        {
-            var profilesForLocation = GetProfilesForLocation(location);
-            return profilesForLocation.Where(p => GetReposForUser(p.Username).Any(r => r.Language == language)).ToList();
         }
 
         private static IList<Repository> BuildRepoListFromJson(string jsonFromInquisitor)
@@ -77,7 +77,7 @@ namespace HackerFinder
             }
         }
 
-        private static Profile MakeProfileFromJson(JObject profileJson)
+        private Profile MakeProfileFromJson(JObject profileJson)
         {
             var nameTokens = profileJson.KeyToString("name").Split(' ');
             var profile = new Profile()
@@ -88,6 +88,8 @@ namespace HackerFinder
                 ProfileUrl = profileJson.KeyToString("html_url"),
                 Username = profileJson.KeyToString("login")
             };
+
+            profile.Repos = GetReposForUser(profile.Username);
             return profile;
         }
 

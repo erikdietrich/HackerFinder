@@ -22,7 +22,7 @@ namespace HackerFinder.EndToEnd
         public void WhenISearchAnd(string location, string language)
         {
             var searcher = new ProfileSearcher(new GithubInquisitor());
-            ReturnedProfiles = searcher.SearchForLocalCandidates(location, language);
+            ReturnedProfiles = searcher.GetProfilesForLocationByTechnology(location, language);
         }
         
         [Then(@"The result should include (.*)")]

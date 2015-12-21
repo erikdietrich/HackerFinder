@@ -27,7 +27,7 @@ namespace HackerFinder.Test.ProfileSearcherTests
         }
 
         [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
-        public void Should_Return_No_Profiles_For_NotFound_UserId()
+        public void Should_Return_No_Repositories_For_NotFound_UserId()
         {
             Inquisitor.Arrange(i => i.GetRepoSearchResults(Arg.AnyString)).Returns(NotFoundResult);
 
@@ -37,7 +37,7 @@ namespace HackerFinder.Test.ProfileSearcherTests
         }
 
         [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
-        public void Should_Return_SingleProfile_For_Single_Result()
+        public void Should_Return_SingleRepository_For_Single_Result()
         {
             var repositoryCount = Target.GetReposForUser("whatever").Count();
 
@@ -45,7 +45,7 @@ namespace HackerFinder.Test.ProfileSearcherTests
         }
 
         [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
-        public void Should_Return_A_Profile_With_Name_Matching_SingleResult_Name()
+        public void Should_Return_A_Repository_With_Name_Matching_SingleResult_Name()
         {
             var firstRepo = Target.GetReposForUser("dontmatter").First();
 
@@ -53,7 +53,7 @@ namespace HackerFinder.Test.ProfileSearcherTests
         }
 
         [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
-        public void Should_Return_A_Profile_With_Url_Matching_SingleResult_Html_Url()
+        public void Should_Return_A_Repository_With_Url_Matching_SingleResult_Html_Url()
         {
             var firstRepo = Target.GetReposForUser("whatever").First();
 
@@ -61,7 +61,7 @@ namespace HackerFinder.Test.ProfileSearcherTests
         }
 
         [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
-        public void Should_Return_A_Profile_With_Language_Matching_SingleResult_Language()
+        public void Should_Return_A_Repository_With_Language_Matching_SingleResult_Language()
         {
             var firstRepo = Target.GetReposForUser("stilldoesn'tmatter").First();
 

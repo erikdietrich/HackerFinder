@@ -50,7 +50,7 @@ namespace HackerFinder.Acceptance
         public void WhenISearchAnd(string location, string language)
         {
             var target = new ProfileSearcher(Inquisitor);
-            ReturnedProfiles = target.SearchForLocalCandidates(location, language);
+            ReturnedProfiles = target.GetProfilesForLocationByTechnology(location, language);
         }
         
         [Then(@"The result should include (.*)")]
