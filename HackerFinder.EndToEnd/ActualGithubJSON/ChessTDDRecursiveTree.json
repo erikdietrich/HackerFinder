@@ -1,0 +1,835 @@
+﻿{
+  "sha": "1efc7000dfa02a86c2316546889b1224451e3412",
+  "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/trees/1efc7000dfa02a86c2316546889b1224451e3412",
+  "tree": [
+    {
+      "path": ".gitattributes",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "412eeda78dc9de1186c2e0e1526764af82ab3431",
+      "size": 483,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/412eeda78dc9de1186c2e0e1526764af82ab3431"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b82b7fe2eb2b25c202b4f4be5c21fce7384bd410",
+      "size": 2679,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/b82b7fe2eb2b25c202b4f4be5c21fce7384bd410"
+    },
+    {
+      "path": "Chess.Acceptance",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6074d88fa061add583e018853b420b03ca9f0dee",
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/trees/6074d88fa061add583e018853b420b03ca9f0dee"
+    },
+    {
+      "path": "Chess.Acceptance/App.config",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "17707ffb7984f756acb66b1c8607e587a2c4c871",
+      "size": 404,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/17707ffb7984f756acb66b1c8607e587a2c4c871"
+    },
+    {
+      "path": "Chess.Acceptance/BishopMoves.feature",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a9de5276c27f4f319550e99d44ff6a164b59e48a",
+      "size": 4697,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/a9de5276c27f4f319550e99d44ff6a164b59e48a"
+    },
+    {
+      "path": "Chess.Acceptance/BishopMoves.feature.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a3ccdd9a7ae69a1d06abf6b342368e55d2e31aed",
+      "size": 27520,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/a3ccdd9a7ae69a1d06abf6b342368e55d2e31aed"
+    },
+    {
+      "path": "Chess.Acceptance/Chess.Acceptance.csproj",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "317def66b09a66706a5a9b03b4193738d2b96742",
+      "size": 7025,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/317def66b09a66706a5a9b03b4193738d2b96742"
+    },
+    {
+      "path": "Chess.Acceptance/KingMoves.feature",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d7a918f9f5c282ee7e3d3ef24f8f03ed176914ad",
+      "size": 7683,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/d7a918f9f5c282ee7e3d3ef24f8f03ed176914ad"
+    },
+    {
+      "path": "Chess.Acceptance/KingMoves.feature.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f8a7441cb1cab40ef5f9e3a31ae3415b15433b75",
+      "size": 47417,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/f8a7441cb1cab40ef5f9e3a31ae3415b15433b75"
+    },
+    {
+      "path": "Chess.Acceptance/KnightMoves.feature",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "45b3ca6d44acc2b743b442df7d75faa0a05b0cf9",
+      "size": 3810,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/45b3ca6d44acc2b743b442df7d75faa0a05b0cf9"
+    },
+    {
+      "path": "Chess.Acceptance/KnightMoves.feature.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f3caeb77a0ec998b0dffcc8f43b87dc556465b4",
+      "size": 23422,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/6f3caeb77a0ec998b0dffcc8f43b87dc556465b4"
+    },
+    {
+      "path": "Chess.Acceptance/NormalBoardSetupScenarios.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4d0998a852779b466a2aa8b1c3778fad6e208875",
+      "size": 2702,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/4d0998a852779b466a2aa8b1c3778fad6e208875"
+    },
+    {
+      "path": "Chess.Acceptance/PawnMoves.feature",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f1324d318642714adb62ef5984cb09746b45d321",
+      "size": 13121,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/f1324d318642714adb62ef5984cb09746b45d321"
+    },
+    {
+      "path": "Chess.Acceptance/PawnMoves.feature.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e005a9365aacb5c33dbb85bdadd7e4147604d725",
+      "size": 71009,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/e005a9365aacb5c33dbb85bdadd7e4147604d725"
+    },
+    {
+      "path": "Chess.Acceptance/Properties",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e5f6a4c0e70486b1be957a7413be8465376d7fdf",
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/trees/e5f6a4c0e70486b1be957a7413be8465376d7fdf"
+    },
+    {
+      "path": "Chess.Acceptance/Properties/AssemblyInfo.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "29bcd47ddd103b9f7282684bb134c118a5bc5eed",
+      "size": 1408,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/29bcd47ddd103b9f7282684bb134c118a5bc5eed"
+    },
+    {
+      "path": "Chess.Acceptance/QueenMoves.feature",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3cd3988dc8d867f06276adbb67fdf33857ee7770",
+      "size": 4102,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/3cd3988dc8d867f06276adbb67fdf33857ee7770"
+    },
+    {
+      "path": "Chess.Acceptance/QueenMoves.feature.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1beef80495bed74a3dbcef594a09b8b565423015",
+      "size": 26035,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/1beef80495bed74a3dbcef594a09b8b565423015"
+    },
+    {
+      "path": "Chess.Acceptance/RookMoves.feature",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c058e136a3880393fa6639d03dd9b5b3321b36e",
+      "size": 4055,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/6c058e136a3880393fa6639d03dd9b5b3321b36e"
+    },
+    {
+      "path": "Chess.Acceptance/RookMoves.feature.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "203abd42d82baf454531c581107a10bbfa4e5c46",
+      "size": 24605,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/203abd42d82baf454531c581107a10bbfa4e5c46"
+    },
+    {
+      "path": "Chess.Acceptance/packages.config",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c6658054d3298792aa30c41deb66967dc19b5d8a",
+      "size": 132,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/c6658054d3298792aa30c41deb66967dc19b5d8a"
+    },
+    {
+      "path": "Chess.Test",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fb6028e9a9e416140888305869b17f16f0276edb",
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/trees/fb6028e9a9e416140888305869b17f16f0276edb"
+    },
+    {
+      "path": "Chess.Test/AsciiBoardBuilderTests",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "455a54dec5cd910b0ee842eaa1e66109cdb22de8",
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/trees/455a54dec5cd910b0ee842eaa1e66109cdb22de8"
+    },
+    {
+      "path": "Chess.Test/AsciiBoardBuilderTests/AsciiBoardBuilder_GenerateBoard_Should.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5428b30beabf4a5193811ee6dd8da79a373d87d9",
+      "size": 5264,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/5428b30beabf4a5193811ee6dd8da79a373d87d9"
+    },
+    {
+      "path": "Chess.Test/BishopTest.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d6c2af1429ce51777a3b23c1b06e622769c5c25f",
+      "size": 2390,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/d6c2af1429ce51777a3b23c1b06e622769c5c25f"
+    },
+    {
+      "path": "Chess.Test/BoardCoordinateTest.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6801a2cd6bb688e13b44a3eafeea6fd1427064e1",
+      "size": 946,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/6801a2cd6bb688e13b44a3eafeea6fd1427064e1"
+    },
+    {
+      "path": "Chess.Test/BoardTests",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5721846a3214f17c0f20fa709a25d472f19bca7b",
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/trees/5721846a3214f17c0f20fa709a25d472f19bca7b"
+    },
+    {
+      "path": "Chess.Test/BoardTests/Board_AddPiece_Given_EmptyBoard_Should.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f66d589c1ae90c03206ec3dc200234d270accd64",
+      "size": 2643,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/f66d589c1ae90c03206ec3dc200234d270accd64"
+    },
+    {
+      "path": "Chess.Test/BoardTests/Board_Constructor_Should.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "726cda0588d76dcf503dd4002a1d4ae635d25fd9",
+      "size": 713,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/726cda0588d76dcf503dd4002a1d4ae635d25fd9"
+    },
+    {
+      "path": "Chess.Test/BoardTests/Board_DoesPieceExistAt_Should.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7bc484acf7f4ee0d3638643ca7160e8f069c39ef",
+      "size": 997,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/7bc484acf7f4ee0d3638643ca7160e8f069c39ef"
+    },
+    {
+      "path": "Chess.Test/BoardTests/Board_GetMovesFrom_Given_ChessboardSetupWithoutPawns_Should.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "949006e7d4a4fb74e6600d329d45874374b03b6e",
+      "size": 3673,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/949006e7d4a4fb74e6600d329d45874374b03b6e"
+    },
+    {
+      "path": "Chess.Test/BoardTests/Board_GetMovesFrom_Given_NormalChessboardSetup_Should.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9f0eae4a4bc30447dc1b79bc2b392d4ba78e7190",
+      "size": 2826,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/9f0eae4a4bc30447dc1b79bc2b392d4ba78e7190"
+    },
+    {
+      "path": "Chess.Test/BoardTests/Board_GetMovesFrom_Given_Pawn_Advanced_To_End_Should.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b1332b7dfd80f1bb7175090609c00cb73eb7bf30",
+      "size": 839,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/b1332b7dfd80f1bb7175090609c00cb73eb7bf30"
+    },
+    {
+      "path": "Chess.Test/BoardTests/Board_GetMovesFrom_Given_SurroundedQueen_Should.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d85af5a7ddfd428ca9d14d88728f826d613da933",
+      "size": 1466,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/d85af5a7ddfd428ca9d14d88728f826d613da933"
+    },
+    {
+      "path": "Chess.Test/BoardTests/Board_GetMovesFrom_Given_WhiteKing_And_Rooks_Only_Should.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "331cc185f17b4f06da10690d7e52bfb8be60c29c",
+      "size": 1873,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/331cc185f17b4f06da10690d7e52bfb8be60c29c"
+    },
+    {
+      "path": "Chess.Test/BoardTests/Board_GetPiece_GivenSingleAddedPiece_Should.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ddd9c29b9c0ea86f9743fb3a9e2d4c95d5fc8ac7",
+      "size": 802,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/ddd9c29b9c0ea86f9743fb3a9e2d4c95d5fc8ac7"
+    },
+    {
+      "path": "Chess.Test/BoardTests/Board_MovePiece_GivenChessBoardWithoutPawns_Should.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "632f2e9b7f2f1ba6b0c9dbce28d3fe790bfd8de3",
+      "size": 3071,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/632f2e9b7f2f1ba6b0c9dbce28d3fe790bfd8de3"
+    },
+    {
+      "path": "Chess.Test/BoardTests/Board_MovePiece_Given_Chessboard_With_EnPassantScenarios_Should.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e4a0750066422bc6a00ecb11e84dc904f941ab55",
+      "size": 1523,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/e4a0750066422bc6a00ecb11e84dc904f941ab55"
+    },
+    {
+      "path": "Chess.Test/BoardTests/Board_RemovePiece_GivenChessBoardWithoutPawns_Should.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f720e3652429f27892605f158e8aa83ee56914e8",
+      "size": 1072,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/f720e3652429f27892605f158e8aa83ee56914e8"
+    },
+    {
+      "path": "Chess.Test/CastlingStatusCheckerTests",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "dae74f487a689409a6d38f2c35f2780c4519abb7",
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/trees/dae74f487a689409a6d38f2c35f2780c4519abb7"
+    },
+    {
+      "path": "Chess.Test/CastlingStatusCheckerTests/When_Determining_Castling_Status_On_KingAndRookOnly_Board_CastlingStatusChecker_Should.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b54356866d722e30f3de957fd922d9f7f289026",
+      "size": 7039,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/7b54356866d722e30f3de957fd922d9f7f289026"
+    },
+    {
+      "path": "Chess.Test/Chess.Test.csproj",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2587fe38f4ce59f00e3e3465ab1b2147b99c5d5f",
+      "size": 6918,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/2587fe38f4ce59f00e3e3465ab1b2147b99c5d5f"
+    },
+    {
+      "path": "Chess.Test/ExtendedAssert.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b5a6733fb833cb991ceea4d72d9db3a62635ef3",
+      "size": 1584,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/7b5a6733fb833cb991ceea4d72d9db3a62635ef3"
+    },
+    {
+      "path": "Chess.Test/KingTests",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "41c7418e1fb63009f644ab60bfdcdf457a023119",
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/trees/41c7418e1fb63009f644ab60bfdcdf457a023119"
+    },
+    {
+      "path": "Chess.Test/KingTests/KingTest.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f50ff0c32fa37133411de249bee93fc403a72425",
+      "size": 2838,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/f50ff0c32fa37133411de249bee93fc403a72425"
+    },
+    {
+      "path": "Chess.Test/KnightTest.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5112a9033e844b78c298d52b7ca9455db989fc7d",
+      "size": 3606,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/5112a9033e844b78c298d52b7ca9455db989fc7d"
+    },
+    {
+      "path": "Chess.Test/PathChecker_GetSpacesAlongPath_Should.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4fbf58a57b424d3279440b3290a80b66d769dbbb",
+      "size": 573,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/4fbf58a57b424d3279440b3290a80b66d769dbbb"
+    },
+    {
+      "path": "Chess.Test/PathMaker_GetPathToDestination_Given_TwoCoordinates_Should.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f1de69c5ddeca241b3d7252a067265601138ede8",
+      "size": 1817,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/f1de69c5ddeca241b3d7252a067265601138ede8"
+    },
+    {
+      "path": "Chess.Test/PawnTests",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a1199fd65513ec5a7cefb7cbec97e5006252fa35",
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/trees/a1199fd65513ec5a7cefb7cbec97e5006252fa35"
+    },
+    {
+      "path": "Chess.Test/PawnTests/PawnTest.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "df7758db98f1b5e4ad760207c0acd9b0aa2d369b",
+      "size": 4741,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/df7758db98f1b5e4ad760207c0acd9b0aa2d369b"
+    },
+    {
+      "path": "Chess.Test/PawnTests/Pawn_GetMovesFrom_For_BlackPawn_Should.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "558de6e9e9a14e5e163c4fa7c668fa56d9fa674a",
+      "size": 762,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/558de6e9e9a14e5e163c4fa7c668fa56d9fa674a"
+    },
+    {
+      "path": "Chess.Test/PawnTests/Pawn_IsCaptureAllowed_For_BlackPawn_Should.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "652ce7582b517501f288039dc5394c6dfd589a37",
+      "size": 1047,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/652ce7582b517501f288039dc5394c6dfd589a37"
+    },
+    {
+      "path": "Chess.Test/PawnTests/Pawn_IsNonCaptureAllowed_For_BlackPawn_Should.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4da2b4a36a740b4c5d850afbb88158a1ae34c675",
+      "size": 1362,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/4da2b4a36a740b4c5d850afbb88158a1ae34c675"
+    },
+    {
+      "path": "Chess.Test/PiecePositioner_Given_NormalSizedBoard_Should.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1fd4b164dddd6932cfae0aa8fab37630c7399bef",
+      "size": 1155,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/1fd4b164dddd6932cfae0aa8fab37630c7399bef"
+    },
+    {
+      "path": "Chess.Test/Properties",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bd57a9429980402e17f918fb405a9b58d1c4a7af",
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/trees/bd57a9429980402e17f918fb405a9b58d1c4a7af"
+    },
+    {
+      "path": "Chess.Test/Properties/AssemblyInfo.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e56882061c51d228132f80ea5ad828f307431666",
+      "size": 1396,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/e56882061c51d228132f80ea5ad828f307431666"
+    },
+    {
+      "path": "Chess.Test/QueenTest.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d3880e697a263650eddf6c2ce0122990e4f62ff7",
+      "size": 1559,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/d3880e697a263650eddf6c2ce0122990e4f62ff7"
+    },
+    {
+      "path": "Chess.Test/RookTest.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "420ad6adb646287b4825c76102edf8ea115b9a1f",
+      "size": 1723,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/420ad6adb646287b4825c76102edf8ea115b9a1f"
+    },
+    {
+      "path": "Chess.Test/packages.config",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ed482a43d7ad4fd6cba8035051f3a5772acdfe66",
+      "size": 140,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/ed482a43d7ad4fd6cba8035051f3a5772acdfe66"
+    },
+    {
+      "path": "Chess",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "52f43022c8781ba40a2bc011c325327066a6db53",
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/trees/52f43022c8781ba40a2bc011c325327066a6db53"
+    },
+    {
+      "path": "Chess/App.config",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8e15646352ec1d9a84bbc6504ef6b46e16bf7823",
+      "size": 182,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/8e15646352ec1d9a84bbc6504ef6b46e16bf7823"
+    },
+    {
+      "path": "Chess/AsciiBoardBuilder.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "beceeaef40ea150f0e575543e2f73f6e9c78e0d0",
+      "size": 1852,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/beceeaef40ea150f0e575543e2f73f6e9c78e0d0"
+    },
+    {
+      "path": "Chess/Bishop.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9fc0aee5e634d14f8ac92e465811304a627fedd6",
+      "size": 764,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/9fc0aee5e634d14f8ac92e465811304a627fedd6"
+    },
+    {
+      "path": "Chess/Board.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "356339dd439b35676e2156b64ccab4c9795de984",
+      "size": 6431,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/356339dd439b35676e2156b64ccab4c9795de984"
+    },
+    {
+      "path": "Chess/BoardCoordinate.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "833bfb7419c7127453deacfb25e07b77968891d8",
+      "size": 1537,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/833bfb7419c7127453deacfb25e07b77968891d8"
+    },
+    {
+      "path": "Chess/CastlingStatusChecker.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9df42b31c166fcdc3967ba8202034f47e0d70880",
+      "size": 2397,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/9df42b31c166fcdc3967ba8202034f47e0d70880"
+    },
+    {
+      "path": "Chess/Chess.csproj",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c1b2d04233144620fc07607e302db7c04dab960b",
+      "size": 3001,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/c1b2d04233144620fc07607e302db7c04dab960b"
+    },
+    {
+      "path": "Chess/King.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e915efd18e12d435ee11b89ee57dcf0e5f3b8b4e",
+      "size": 562,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/e915efd18e12d435ee11b89ee57dcf0e5f3b8b4e"
+    },
+    {
+      "path": "Chess/Knight.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a6984fbc309c3f94a121eb0dc3eea919424b64d",
+      "size": 1148,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/8a6984fbc309c3f94a121eb0dc3eea919424b64d"
+    },
+    {
+      "path": "Chess/PathMaker.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "502107f2bef5f2f1801238b0c76ef9862bc6360c",
+      "size": 2743,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/502107f2bef5f2f1801238b0c76ef9862bc6360c"
+    },
+    {
+      "path": "Chess/Pawn.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aa0d3a8bf7e340533b0651237ccb46592c2f89ba",
+      "size": 2620,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/aa0d3a8bf7e340533b0651237ccb46592c2f89ba"
+    },
+    {
+      "path": "Chess/Piece.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e85f5d4d6e5fe2b8c79ed16bfcfb5428f407084",
+      "size": 2843,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/4e85f5d4d6e5fe2b8c79ed16bfcfb5428f407084"
+    },
+    {
+      "path": "Chess/PiecePositioner.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "afa3abd680d734cc10b2b1d30702abb0cb694da8",
+      "size": 1754,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/afa3abd680d734cc10b2b1d30702abb0cb694da8"
+    },
+    {
+      "path": "Chess/Program.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3068df314ad7538920fa70156268db350085c3fa",
+      "size": 181,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/3068df314ad7538920fa70156268db350085c3fa"
+    },
+    {
+      "path": "Chess/Properties",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "002884b62845978b3760cc23f91cbd3e5e6eb7cf",
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/trees/002884b62845978b3760cc23f91cbd3e5e6eb7cf"
+    },
+    {
+      "path": "Chess/Properties/AssemblyInfo.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d4761ef2d58bfe94e31024e7d3445e5a2fefe8ec",
+      "size": 1386,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/d4761ef2d58bfe94e31024e7d3445e5a2fefe8ec"
+    },
+    {
+      "path": "Chess/Queen.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "67bbf49ab73fd8f9072a50ea58b44abbf894635f",
+      "size": 578,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/67bbf49ab73fd8f9072a50ea58b44abbf894635f"
+    },
+    {
+      "path": "Chess/Rook.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "660794f95d6fa8ec89ff0386a3cf860a592a8fd2",
+      "size": 844,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/660794f95d6fa8ec89ff0386a3cf860a592a8fd2"
+    },
+    {
+      "path": "ChessTDD.sln",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "61c61b9f248460f7c55b13c2afb713ea7f97b0ca",
+      "size": 1936,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/61c61b9f248460f7c55b13c2afb713ea7f97b0ca"
+    },
+    {
+      "path": "Working.xlsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a30d087cbf1d7a75babb8ee704ea3fc329a2727b",
+      "size": 10241,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/a30d087cbf1d7a75babb8ee704ea3fc329a2727b"
+    },
+    {
+      "path": "packages",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d21d57b6abe7a1685d3d3229c833ba1e80c76a5c",
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/trees/d21d57b6abe7a1685d3d3229c833ba1e80c76a5c"
+    },
+    {
+      "path": "packages/JustMock.2014.1.1519.1",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "67fa1ec63dffe50432b584a9514fafc1e9c7cb45",
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/trees/67fa1ec63dffe50432b584a9514fafc1e9c7cb45"
+    },
+    {
+      "path": "packages/JustMock.2014.1.1519.1/JustMock.2014.1.1519.1.nupkg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51cda143d8d7a4fabf09724fa800e4377379794d",
+      "size": 896510,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/51cda143d8d7a4fabf09724fa800e4377379794d"
+    },
+    {
+      "path": "packages/JustMock.2014.1.1519.1/JustMock.2014.1.1519.1.nuspec",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a789d5d56df22c18eb8f908099bbaaf2ae4a7eee",
+      "size": 1225,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/a789d5d56df22c18eb8f908099bbaaf2ae4a7eee"
+    },
+    {
+      "path": "packages/JustMock.2014.1.1519.1/LicenseAgreements",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "600370a761e937cc053678d847ee8848086726b3",
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/trees/600370a761e937cc053678d847ee8848086726b3"
+    },
+    {
+      "path": "packages/JustMock.2014.1.1519.1/LicenseAgreements/License.rtf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6cc1545c8ca7422976b9c8e058797fd93644516b",
+      "size": 59931,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/6cc1545c8ca7422976b9c8e058797fd93644516b"
+    },
+    {
+      "path": "packages/JustMock.2014.1.1519.1/LicenseAgreements/ThirdParty",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "34e151c682391692636ab43774a93be043e05e1b",
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/trees/34e151c682391692636ab43774a93be043e05e1b"
+    },
+    {
+      "path": "packages/JustMock.2014.1.1519.1/LicenseAgreements/ThirdParty/Castle Project License.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e259b5841d5266f494e80fd07b887bc71ae5722f",
+      "size": 9193,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/e259b5841d5266f494e80fd07b887bc71ae5722f"
+    },
+    {
+      "path": "packages/JustMock.2014.1.1519.1/LicenseAgreements/ThirdParty/Entity Framework License.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c4ef15800f9fd9b1f670fd12280319de8309ddbf",
+      "size": 9130,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/c4ef15800f9fd9b1f670fd12280319de8309ddbf"
+    },
+    {
+      "path": "packages/JustMock.2014.1.1519.1/LicenseAgreements/ThirdParty/IQToolkit.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da3dc935e5cb8651a65fa44db39a16376eb03891",
+      "size": 2629,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/da3dc935e5cb8651a65fa44db39a16376eb03891"
+    },
+    {
+      "path": "packages/JustMock.2014.1.1519.1/LicenseAgreements/ThirdParty/Ninject.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "20230c5e1035a76622371356d7e695c20737654a",
+      "size": 12259,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/20230c5e1035a76622371356d7e695c20737654a"
+    },
+    {
+      "path": "packages/JustMock.2014.1.1519.1/LicenseAgreements/ThirdParty/Unity License.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a65e60b71a5c4162ae81ea9e5df589898dce42cd",
+      "size": 3949,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/a65e60b71a5c4162ae81ea9e5df589898dce42cd"
+    },
+    {
+      "path": "packages/JustMock.2014.1.1519.1/LicenseAgreements/ThirdParty/WIX_3.5_License.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3cae9d0ab40f29dd50e9ad4bd34add7825a9ee64",
+      "size": 11585,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/3cae9d0ab40f29dd50e9ad4bd34add7825a9ee64"
+    },
+    {
+      "path": "packages/JustMock.2014.1.1519.1/lib",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "38db73dcc109d460fa2c5e4562250bd84ceec674",
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/trees/38db73dcc109d460fa2c5e4562250bd84ceec674"
+    },
+    {
+      "path": "packages/JustMock.2014.1.1519.1/lib/Net35",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e4fd4e1c89d762e6ce564156fe84413cc130320a",
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/trees/e4fd4e1c89d762e6ce564156fe84413cc130320a"
+    },
+    {
+      "path": "packages/JustMock.2014.1.1519.1/lib/Net35/Telerik.JustMock.Container.dll",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4bfa8661aa20c101c7d48dcfcca580790935d982",
+      "size": 19768,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/4bfa8661aa20c101c7d48dcfcca580790935d982"
+    },
+    {
+      "path": "packages/JustMock.2014.1.1519.1/lib/Net35/Telerik.JustMock.Container.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de086a5c36a05c71aaccc3c116aaced800a2de99",
+      "size": 15999,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/de086a5c36a05c71aaccc3c116aaced800a2de99"
+    },
+    {
+      "path": "packages/JustMock.2014.1.1519.1/lib/Net35/Telerik.JustMock.dll",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "abd510dcc85ec790ebad681fde5eaf40ef38cbc3",
+      "size": 935736,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/abd510dcc85ec790ebad681fde5eaf40ef38cbc3"
+    },
+    {
+      "path": "packages/JustMock.2014.1.1519.1/lib/Net35/Telerik.JustMock.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "23019b5f0d8c533a3dedd6ad0472b52b7bc3c7db",
+      "size": 880381,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/23019b5f0d8c533a3dedd6ad0472b52b7bc3c7db"
+    },
+    {
+      "path": "packages/JustMock.2014.1.1519.1/lib/SL4",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e7c30475e4c6f39a408527f4cd42c6098ad72b56",
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/trees/e7c30475e4c6f39a408527f4cd42c6098ad72b56"
+    },
+    {
+      "path": "packages/JustMock.2014.1.1519.1/lib/SL4/Telerik.JustMock.Silverlight.dll",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "70aebac053ccf75781d141b41e6047657f7b6fc9",
+      "size": 919864,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/70aebac053ccf75781d141b41e6047657f7b6fc9"
+    },
+    {
+      "path": "packages/JustMock.2014.1.1519.1/lib/SL4/Telerik.JustMock.Silverlight.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a43128e518e9884aa9b5943f47b1c668de6cf32",
+      "size": 870081,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/9a43128e518e9884aa9b5943f47b1c668de6cf32"
+    },
+    {
+      "path": "packages/SpecFlow.1.9.0",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "425964dae87eb200aea84140139fc8dfcc6d4210",
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/trees/425964dae87eb200aea84140139fc8dfcc6d4210"
+    },
+    {
+      "path": "packages/SpecFlow.1.9.0/content",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7b95b1c9a042b1125ce8d8acda3d977600090d50",
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/trees/7b95b1c9a042b1125ce8d8acda3d977600090d50"
+    },
+    {
+      "path": "packages/SpecFlow.1.9.0/content/App.config.transform",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "75b9125ecd40fdf13209e0c9d7d08bcb7834193c",
+      "size": 363,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/75b9125ecd40fdf13209e0c9d7d08bcb7834193c"
+    },
+    {
+      "path": "packages/repositories.config",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0e7837037a2e3cf59c736f602055d358692f9693",
+      "size": 186,
+      "url": "https://api.github.com/repos/erikdietrich/ChessTDD/git/blobs/0e7837037a2e3cf59c736f602055d358692f9693"
+    }
+  ],
+  "truncated": false
+}

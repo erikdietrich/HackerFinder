@@ -46,15 +46,15 @@ namespace HackerFinder
                 throw new ArgumentException(nameof(githubUserId));
 
             var jsonFromInquisitor = _inquisitor.GetRepoSearchResults(githubUserId);
-            return BuildRepoListFromJson(jsonFromInquisitor);
+            return BuildRepoListFromJson(githubUserId, jsonFromInquisitor);
         }
 
-        private static IList<Repository> BuildRepoListFromJson(string jsonFromInquisitor)
+        private IList<Repository> BuildRepoListFromJson(string githubUserId, string jsonFromInquisitor)
         {
             if (JToken.Parse(jsonFromInquisitor) is JArray)
             {
                 var arrayOfTokens = JArray.Parse(jsonFromInquisitor);
-                return arrayOfTokens.Select(jt => MakeRepositoryFromToken(jt)).ToList();
+                return arrayOfTokens.Select(jt => MakeRepositoryFromToken(githubUserId, jt)).ToList();
             }
             return Enumerable.Empty<Repository>().ToList();
         }
@@ -93,14 +93,43 @@ namespace HackerFinder
             return profile;
         }
 
-        private static Repository MakeRepositoryFromToken(JToken token)
+        private Repository MakeRepositoryFromToken(string githubUserId, JToken token)
         {
-            return new Repository()
+            var repo = new Repository()
             {
                 Name = token.KeyToString("name"),
                 Url = token.KeyToString("html_url"),
                 Language = token.KeyToString("language")
             };
+
+            AddShaToRepo(githubUserId, repo);
+            AddFileTreeToRepo(githubUserId, repo);
+
+            return repo;
+        }
+        private void AddShaToRepo(string githubUserId, Repository repo)
+        {
+            var refJsonFromInquisitor = _inquisitor.GetRefForRepo(githubUserId, repo.Name);
+            if (!string.IsNullOrEmpty(refJsonFromInquisitor))
+            {
+                var refJson = JObject.Parse(refJsonFromInquisitor);
+                if (refJson.Property("object") != null)
+                    repo.Sha = refJson["object"]["sha"].ToString();
+            }
+        }
+        private void AddFileTreeToRepo(string githubUserId, Repository repo)
+        {
+            var treeJsonFromInquisitor = _inquisitor.GetRecursiveTree(githubUserId, repo.Name, repo.Sha);
+            if (!string.IsNullOrEmpty(treeJsonFromInquisitor))
+            {
+                var treeJson = JObject.Parse(treeJsonFromInquisitor);
+                if (treeJson.Property("tree") != null)
+                {
+                    var jsonArray = JArray.Parse(treeJson["tree"].ToString());
+                    for (var index = 0; index < jsonArray.Count; index++)
+                        repo.Files.Add(jsonArray[index].KeyToString("path"));
+                }
+            }
         }
     }
 }

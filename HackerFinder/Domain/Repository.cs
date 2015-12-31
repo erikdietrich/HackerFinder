@@ -9,6 +9,9 @@ namespace HackerFinder.Domain
         public string Name { get; set; }
         public string Url { get; set; }
         public string Language { get; set; }
+        public string Sha { get; set; }
+        public IList<string> Files { get; set; } = new List<string>();
+
         public string DownloadUrl
         {
             get { return Url + "/archive/master.zip"; }

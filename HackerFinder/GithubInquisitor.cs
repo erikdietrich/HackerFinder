@@ -26,16 +26,12 @@ namespace HackerFinder
 
         public string GetRepoSearchResults(string githubUserId)
         {
-            var task = Client.GetAsync($"https://api.github.com/users/{githubUserId}/repos");
-            var result = task.Result;
-            return result.Content.ReadAsStringAsync().Result;
+            return GetVerbatimSearchResults($"https://api.github.com/users/{githubUserId}/repos");
         }
         
         public string GetLocationSearchResults(string locationText)
         {
-            var task = Client.GetAsync(string.Format("https://api.github.com/search/users?q=+location:{0}", locationText));
-            var result = task.Result;
-            return result.Content.ReadAsStringAsync().Result;
+            return GetVerbatimSearchResults($"https://api.github.com/search/users?q=+location:{locationText}");
         }
 
         public string GetVerbatimSearchResults(string queryString)
@@ -45,11 +41,19 @@ namespace HackerFinder
             return result.Content.ReadAsStringAsync().Result;
         }
 
+        public string GetRefForRepo(string userId, string repoId)
+        {
+            return GetVerbatimSearchResults($"https://api.github.com/repos/{userId}/{repoId}/git/refs/heads/master");
+        }
+
+        public string GetRecursiveTree(string userId, string repoId, string sha)
+        {
+            return GetVerbatimSearchResults($"https://api.github.com/repos/{userId}/{repoId}/git/trees/{sha}?recursive=1");
+        }
+
         public void Dispose()
         {
             Client.Dispose();
         }
-
-        
     }
 }

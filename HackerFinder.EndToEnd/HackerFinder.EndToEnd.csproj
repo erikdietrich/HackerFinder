@@ -75,6 +75,8 @@
     <Compile Include="RepoSearchSteps.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ActualGithubJSON\ChessTDDRecursiveTree.json" />
+    <None Include="ActualGithubJSON\ChessTDDRef.json" />
     <None Include="ActualGithubJSON\SingleErikRepo.json" />
     <None Include="ActualGithubJSON\ErikRepos.json" />
     <None Include="App.config" />

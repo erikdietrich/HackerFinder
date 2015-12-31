@@ -85,12 +85,16 @@ this.ScenarioSetup(scenarioInfo);
                         "Name",
                         "Url",
                         "Language",
-                        "Download"});
+                        "Download",
+                        "Sha",
+                        "FileCount"});
             table1.AddRow(new string[] {
                         "ASPNETWebAPISamples",
                         "https://github.com/erikdietrich/ASPNETWebAPISamples",
                         "JavaScript",
-                        "https://github.com/erikdietrich/ASPNETWebAPISamples/archive/master.zip"});
+                        "https://github.com/erikdietrich/ASPNETWebAPISamples/archive/master.zip",
+                        "ef4ee82d94f1d07b12f3b3981fbfef573ae9fd72",
+                        "106"});
 #line 6
  testRunner.And("First repo should have the following properties", ((string)(null)), table1, "And ");
 #line hidden

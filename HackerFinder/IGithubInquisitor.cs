@@ -12,5 +12,9 @@ namespace HackerFinder
 
         string GetRepoSearchResults(string repoId);
 
+        string GetRefForRepo(string userId, string repoId);
+
+        string GetRecursiveTree(string userId, string repoId, string sha);
+
     }
 }
