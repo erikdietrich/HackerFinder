@@ -16,5 +16,9 @@ namespace HackerFinder.Domain
         {
             get { return Url + "/archive/master.zip"; }
         }
+        public void AddFile(string filePath)
+        {
+            Files.Add(filePath);
+        }
     }
 }
