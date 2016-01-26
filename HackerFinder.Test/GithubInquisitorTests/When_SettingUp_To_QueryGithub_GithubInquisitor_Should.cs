@@ -52,7 +52,7 @@ namespace HackerFinder.Test.GithubInquisitorTests
             const string password = "nottelling";
             Target = new GithubInquisitor(username, password);
 
-            var expectedHeaderValue = $"Basic {Convert.ToBase64String(Encoding.ASCII.GetBytes($"{username}:{password}"))}";
+            var expectedHeaderValue = string.Format("Basic {0}", Convert.ToBase64String(Encoding.ASCII.GetBytes(string.Format("{0}:{1}", username, password))));
 
             var allMatchingHeaderValue = TargetHeaders.First(rh => rh.Key == HttpRequestHeader.Authorization.ToString()).Value;
             var concatenatedValuesForHeader = allMatchingHeaderValue.Aggregate((i, j) => string.Format("{0} {1}", i, j));
