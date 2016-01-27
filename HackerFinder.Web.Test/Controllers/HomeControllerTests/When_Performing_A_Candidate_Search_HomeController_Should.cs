@@ -1,10 +1,12 @@
-﻿using HackerFinder.Web.Controllers;
+﻿using HackerFinder.Domain;
+using HackerFinder.Web.Controllers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 using Telerik.JustMock;
 using Telerik.JustMock.Helpers;
 
@@ -18,11 +20,13 @@ namespace HackerFinder.Web.Test.Controllers.HomeControllerTests
         private const string DefaultLanguage = "somelanguage";
 
         [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
-        public void Return_Null()
+        public void Return_View_Containing_Profiles_As_Model()
         {
             var controller = new HomeController();
 
-            Assert.IsNull(controller.Search(DefaultLocation, DefaultLanguage));
+            var model = controller.Search(DefaultLocation, DefaultLanguage).GetModel<IList<Profile>>();
+
+            Assert.IsNotNull(model);
         }
 
         [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]

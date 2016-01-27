@@ -42,8 +42,9 @@ namespace HackerFinder.Web.Controllers
         //Post Home/Search
         public ActionResult Search(string location, string language)
         {
-            _searcher.GetProfilesForLocationByTechnology(location, language);
-            return null;
+            var profiles = _searcher.GetProfilesForLocationByTechnology(location, language);
+
+            return View(profiles);
         }
     }
 }
