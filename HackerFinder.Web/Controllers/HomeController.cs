@@ -8,6 +8,18 @@ namespace HackerFinder.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IProfileSearcher _searcher;
+
+        public HomeController() : this(null)
+        {
+
+        }
+
+        public HomeController(IProfileSearcher searcher = null)
+        {
+            _searcher = searcher ?? new ProfileSearcher(new GithubInquisitor("erikdietrich", Environment.GetEnvironmentVariable("GithubPass", EnvironmentVariableTarget.User)));
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -30,6 +42,7 @@ namespace HackerFinder.Web.Controllers
         //Post Home/Search
         public ActionResult Search(string location, string language)
         {
+            _searcher.GetProfilesForLocationByTechnology(location, language);
             return null;
         }
     }

@@ -8,7 +8,7 @@ using HackerFinder.Extensions;
 using HackerFinder.Domain;
 namespace HackerFinder
 {
-    public class ProfileSearcher
+    public class ProfileSearcher : IProfileSearcher
     {
         private readonly IGithubInquisitor _inquisitor;
 
