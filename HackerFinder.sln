@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerFinder.Console.Test",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerFinder.Web", "HackerFinder.Web\HackerFinder.Web.csproj", "{EB69C05F-12E7-4507-9C5E-DDAB05A5E7A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerFinder.Web.Test", "HackerFinder.Web.Test\HackerFinder.Web.Test.csproj", "{93D4C06B-A132-4EFA-925B-8B1A24BB751B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{EB69C05F-12E7-4507-9C5E-DDAB05A5E7A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB69C05F-12E7-4507-9C5E-DDAB05A5E7A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB69C05F-12E7-4507-9C5E-DDAB05A5E7A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93D4C06B-A132-4EFA-925B-8B1A24BB751B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93D4C06B-A132-4EFA-925B-8B1A24BB751B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93D4C06B-A132-4EFA-925B-8B1A24BB751B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93D4C06B-A132-4EFA-925B-8B1A24BB751B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

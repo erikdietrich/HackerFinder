@@ -26,5 +26,11 @@ namespace HackerFinder.Web.Controllers
 
             return View();
         }
+
+        //Post Home/Search
+        public ActionResult Search(string location, string language)
+        {
+            return null;
+        }
     }
 }
