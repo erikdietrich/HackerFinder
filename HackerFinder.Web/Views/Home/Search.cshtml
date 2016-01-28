@@ -1,14 +1,12 @@
 ﻿@model IEnumerable<HackerFinder.Domain.Profile>
 
 @{
-    ViewBag.Title = "Search";
+    ViewBag.Title = "Search Results";
 }
 
-<h2>Search</h2>
+<h2>Profile Search Results</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -47,9 +45,7 @@
             @Html.DisplayFor(modelItem => item.ProfileUrl)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            
         </td>
     </tr>
 }
