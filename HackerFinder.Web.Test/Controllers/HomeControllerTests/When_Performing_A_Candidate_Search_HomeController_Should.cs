@@ -22,7 +22,7 @@ namespace HackerFinder.Web.Test.Controllers.HomeControllerTests
         [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
         public void Return_View_Containing_Profiles_As_Model()
         {
-            var controller = new HomeController();
+            var controller = new HomeController(); 
 
             var model = controller.Search(DefaultLocation, DefaultLanguage).GetModel<IList<Profile>>();
 
@@ -34,11 +34,21 @@ namespace HackerFinder.Web.Test.Controllers.HomeControllerTests
         {
             var searcher = Mock.Create<IProfileSearcher>();
 
-            var controller = new HomeController(searcher);
+            var controller = new HomeController(new PasswordRetriever(), searcher);
 
             controller.Search(DefaultLocation, DefaultLanguage);
 
             searcher.Assert(s => s.GetProfilesForLocationByTechnology(DefaultLocation, DefaultLanguage));
+        }
+
+        [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
+        public void Inovke_Retriever_When_Searcher_Is_Null()
+        {
+            var retriever = Mock.Create<PasswordRetriever>();
+
+            var controller = new HomeController(retriever, null);
+
+            retriever.Assert(r => r.GetPassword("GithubPass"), Occurs.Once());
         }
     }
 }

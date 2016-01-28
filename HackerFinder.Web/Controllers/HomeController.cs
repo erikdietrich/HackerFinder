@@ -10,14 +10,21 @@ namespace HackerFinder.Web.Controllers
     {
         private readonly IProfileSearcher _searcher;
 
-        public HomeController() : this(null)
+        public HomeController() : this(new PasswordRetriever())
         {
 
         }
 
-        public HomeController(IProfileSearcher searcher = null)
+        public HomeController(PasswordRetriever retriever, IProfileSearcher searcher = null)
         {
-            _searcher = searcher ?? new ProfileSearcher(new GithubInquisitor("erikdietrich", Environment.GetEnvironmentVariable("GithubPass", EnvironmentVariableTarget.User)));
+            if (searcher == null)
+            {
+                var githubPassword = retriever.GetPassword("GithubPass");
+                var inquisitor = new GithubInquisitor("erikdietrich", githubPassword);
+                _searcher = new ProfileSearcher(inquisitor);
+            }
+            else
+                _searcher = searcher;
         }
 
         public ActionResult Index()

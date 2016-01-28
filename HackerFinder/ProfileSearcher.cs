@@ -64,16 +64,20 @@ namespace HackerFinder
             var contentToString = _inquisitor.GetLocationSearchResults(locationText);
 
             var json = JObject.Parse(contentToString);
-            var array = JArray.Parse(json["items"].ToString());
-
-            for (var index = 0; index < array.Count; index++)
+            var token = json["items"];
+            if (token != null)
             {
-                var profileUrl = array[index].KeyToString("url");
-                var profileRawResult = _inquisitor.GetVerbatimSearchResults(profileUrl);
-                var profileJson = JObject.Parse(profileRawResult);
-                var profile = MakeProfileFromJson(profileJson);
+                var array = JArray.Parse(token.ToString());
 
-                yield return profile;
+                for (var index = 0; index < array.Count; index++)
+                {
+                    var profileUrl = array[index].KeyToString("url");
+                    var profileRawResult = _inquisitor.GetVerbatimSearchResults(profileUrl);
+                    var profileJson = JObject.Parse(profileRawResult);
+                    var profile = MakeProfileFromJson(profileJson);
+
+                    yield return profile;
+                }
             }
         }
 
