@@ -64,6 +64,14 @@ namespace HackerFinder.Test.ProfileSearcherTests
         }
 
         [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
+        public void Throw_A_RateLimitException_When_Inquisitor_Throws_A_RateLimitException()
+        {
+            Inquisitor.Arrange(i => i.GetLocationSearchResults(Arg.AnyString)).Throws(new RateLimitException());
+
+            ExtendedAssert.Throws<RateLimitException>(() => Target.GetProfilesForLocation("whatever"));
+        }
+
+        [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
         public void Execute_A_Verbatim_Query_For_URL_Value()
         {
             Inquisitor.Arrange(i => i.GetLocationSearchResults(Arg.AnyString)).Returns(WheelingLocationResult);

@@ -1,4 +1,5 @@
 ﻿using HackerFinder.Domain;
+using HackerFinder.Exceptions;
 using HackerFinder.Web.Controllers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -49,6 +50,19 @@ namespace HackerFinder.Web.Test.Controllers.HomeControllerTests
             var controller = new HomeController(retriever, null);
 
             retriever.Assert(r => r.GetPassword("GithubPass"), Occurs.Once());
+        }
+
+        [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
+        public void Sets_Error_In_The_ViewBag_On_RateLimitException()
+        {
+            var searcher = Mock.Create<IProfileSearcher>();
+            searcher.Arrange(s => s.GetProfilesForLocationByTechnology(Arg.AnyString, Arg.AnyString)).Throws(new RateLimitException());
+
+            var controller = new HomeController(new PasswordRetriever(), searcher);
+
+            controller.Search(DefaultLocation, DefaultLanguage);
+
+            Assert.AreEqual<string>("Rate limit has been exceeded.", controller.ViewBag.ErrorMessage);
         }
     }
 }

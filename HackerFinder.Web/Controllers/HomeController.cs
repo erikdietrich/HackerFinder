@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HackerFinder.Domain;
+using HackerFinder.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -49,9 +51,16 @@ namespace HackerFinder.Web.Controllers
         //Post Home/Search
         public ActionResult Search(string location, string language)
         {
-            var profiles = _searcher.GetProfilesForLocationByTechnology(location, language);
-
-            return View(profiles);
+            try
+            {
+                var profiles = _searcher.GetProfilesForLocationByTechnology(location, language);
+                return View(profiles);
+            }
+            catch(RateLimitException)
+            {
+                ViewBag.ErrorMessage = "Rate limit has been exceeded.";
+            }
+            return View(Enumerable.Empty<Profile>());
         }
     }
 }

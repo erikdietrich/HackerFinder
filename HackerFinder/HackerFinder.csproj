@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exceptions\GithubQueryingException.cs" />
+    <Compile Include="Exceptions\RateLimitException.cs" />
     <Compile Include="Extensions\JsonNetExtensions.cs" />
     <Compile Include="GithubInquisitor.cs" />
     <Compile Include="IGithubInquisitor.cs" />

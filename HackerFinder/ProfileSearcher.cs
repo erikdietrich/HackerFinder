@@ -28,7 +28,7 @@ namespace HackerFinder
             {
                 return FindAllProfilesForLocation(locationText).ToList();
             }
-            catch (Exception ex)
+            catch (Exception ex) when (ex.GetType() != typeof(RateLimitException))
             {
                 throw new GithubQueryingException("A problem occurred searching Github.", ex);
             }

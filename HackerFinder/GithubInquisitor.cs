@@ -1,3 +1,4 @@
+using HackerFinder.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,7 +39,12 @@ namespace HackerFinder
         {
             var task = Client.GetAsync(queryString);
             var result = task.Result;
-            return result.Content.ReadAsStringAsync().Result;
+            var searchResults = result.Content.ReadAsStringAsync().Result;
+
+            if (searchResults.ToLower().Contains("rate limit"))
+                throw new RateLimitException();
+
+            return searchResults;
         }
 
         public string GetRefForRepo(string userId, string repoId)
