@@ -81,13 +81,14 @@ namespace HackerFinder
             }
         }
 
+        #region ExtractToProfileMaker
+
         private Profile MakeProfileFromJson(JObject profileJson)
         {
-            var nameTokens = profileJson.KeyToString("name").Split(' ');
             var profile = new Profile()
             {
-                FirstName = nameTokens[0],
-                LastName = nameTokens.Count() > 1 ? nameTokens[1] : string.Empty,
+                FirstName = GetFirstNameFromProfileJson(profileJson),
+                LastName = GetLastNameFromProfileJson(profileJson),
                 EmailAddress = profileJson.KeyToString("email"),
                 ProfileUrl = profileJson.KeyToString("html_url"),
                 Username = profileJson.KeyToString("login")
@@ -96,6 +97,24 @@ namespace HackerFinder
             profile.Repos = GetReposForUser(profile.Username);
             return profile;
         }
+
+        private static string GetLastNameFromProfileJson(JObject profileJson)
+        {
+            var nameTokens = TokenizeName(profileJson);
+            return nameTokens?.Count() > 1 ? nameTokens[1] : string.Empty;
+        }
+
+        private static string GetFirstNameFromProfileJson(JObject profileJson)
+        {
+            return TokenizeName(profileJson)?[0];
+        }
+
+        private static string[] TokenizeName(JObject profileJson)
+        {
+            return profileJson.KeyToString("name")?.Split(' ');
+        }
+
+        #endregion
 
         private Repository MakeRepositoryFromToken(string githubUserId, JToken token)
         {
