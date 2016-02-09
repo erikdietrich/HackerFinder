@@ -80,6 +80,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Controllers\HomeControllerTests\When_Performing_A_Candidate_CSV_Export_HomeController_Should.cs" />
     <Compile Include="Controllers\HomeControllerTests\When_Performing_A_Candidate_Search_HomeController_Should.cs" />
     <Compile Include="Controllers\When_Retrieving_Passwords_PasswordRetriver_Should.cs" />
     <Compile Include="Extensions.cs" />

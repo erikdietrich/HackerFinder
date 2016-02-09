@@ -9,6 +9,7 @@
         <p class="lead">Enter a technology and location for which to search.</p>
         <p>@Html.Label("Location") @Html.TextBox("Location")</p>
         <p>@Html.Label("Language") @Html.TextBox("Language")</p>
-        <input type="submit" value="Search"/>
+        <input type="submit" formaction="Home/Search" value="Search" />
+        <input type="submit" formaction="Home/Export" value="Export"/>
     }
 </div>

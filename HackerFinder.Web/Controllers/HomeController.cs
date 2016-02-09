@@ -1,15 +1,21 @@
-﻿using HackerFinder.Domain;
+﻿using CsvHelper;
+using HackerFinder.Domain;
 using HackerFinder.Exceptions;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using System.Text;
 namespace HackerFinder.Web.Controllers
 {
     public class HomeController : Controller
     {
+        public const string Filename = "results.csv";
+        public const string FileType = "text/csv";
+        public const string RateLimitErrorMessage = "Rate limit has been exceeded.";
+
         private readonly IProfileSearcher _searcher;
 
         public HomeController() : this(new PasswordRetriever())
@@ -58,9 +64,36 @@ namespace HackerFinder.Web.Controllers
             }
             catch(RateLimitException)
             {
-                ViewBag.ErrorMessage = "Rate limit has been exceeded.";
+                ViewBag.ErrorMessage = RateLimitErrorMessage;
             }
             return View(Enumerable.Empty<Profile>());
+        }
+
+        //Post Home/Export
+        public FileContentResult Export(string location, string language)
+        {
+            try
+            {
+                return BuildFileContentResult(location, language);
+            }
+            catch (RateLimitException)
+            {
+                return File(new UTF8Encoding().GetBytes(RateLimitErrorMessage), FileType, Filename);
+            }
+
+        }
+        private FileContentResult BuildFileContentResult(string location, string language)
+        {
+            var profiles = _searcher.GetProfilesForLocationByTechnology(location, language);
+            using (var memoryStream = new MemoryStream())
+            {
+                using (var streamWriter = new StreamWriter(memoryStream))
+                using (var csvWriter = new CsvWriter(streamWriter))
+                {
+                    csvWriter.WriteRecords(profiles);
+                }
+                return File(memoryStream.ToArray(), FileType, Filename);
+            }
         }
     }
 }
